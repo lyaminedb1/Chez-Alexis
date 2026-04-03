@@ -1,0 +1,27 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chez Alexis — Logo">
+  <!-- Outer circle -->
+  <circle cx="100" cy="96" r="90" fill="#ffffff" stroke="#1B3070" stroke-width="3"/>
+
+  <!-- Left A: outer-left leg + inner-right leg -->
+  <path d="M 42 148 L 78 28 L 88 28 L 84 44 L 60 148 Z" fill="#1B3070"/>
+  <!-- Right A: inner-left leg + outer-right leg -->
+  <path d="M 158 148 L 122 28 L 112 28 L 116 44 L 140 148 Z" fill="#1B3070"/>
+  <!-- Shared apex fill (center triangle to close the gap) -->
+  <polygon points="83,28 100,28 117,28 112,28 100,16 88,28" fill="#1B3070"/>
+  <polygon points="84,44 100,60 116,44 100,28" fill="#1B3070"/>
+
+  <!-- Left A crossbar -->
+  <rect x="49" y="102" width="36" height="9" rx="1" fill="#1B3070"/>
+  <!-- Right A crossbar -->
+  <rect x="115" y="102" width="36" height="9" rx="1" fill="#1B3070"/>
+
+  <!-- "Chez Alexis" label inside circle -->
+  <text
+    x="100" y="181"
+    text-anchor="middle"
+    font-family="'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+    font-size="16"
+    font-weight="400"
+    letter-spacing="1"
+    fill="#1B3070">Chez Alexis</text>
+</svg>

@@ -3,371 +3,551 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chez Alexis — Boulangerie Artisanale · Boulogne-Billancourt</title>
-  <meta name="description" content="Boulangerie artisanale Chez Alexis à Boulogne-Billancourt. Pains au levain, viennoiseries, Yogo signature. 4.9★ sur Google. 48 bis Avenue Victor Hugo.">
+
+  <!-- ── Primary SEO ── -->
+  <title>Chez Alexis — Boulangerie Artisanale à Boulogne-Billancourt | Pain au Levain & Viennoiseries</title>
+  <meta name="description" content="Boulangerie artisanale Chez Alexis : pain au levain, croissants feuilletés, pain cacao-pralinée et Yogo signature. 4.9★ sur Google · 289 avis. 48 bis Avenue Victor Hugo, 92100 Boulogne-Billancourt. Lun–Sam 7h–20h." />
+  <meta name="keywords" content="boulangerie Boulogne-Billancourt, pain au levain, Chez Alexis, boulangerie artisanale, croissants, viennoiseries, Yogo, pain cacao pralinée, 92100, Alexis Paviot" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Chez Alexis — Maison Paviot" />
+  <link rel="canonical" href="https://www.chezalexis-boulangerie.fr/" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Chez Alexis" />
+  <meta property="og:title" content="Chez Alexis — Boulangerie Artisanale à Boulogne-Billancourt" />
+  <meta property="og:description" content="Pain au levain, croissants d'exception et Yogo signature. 4.9★ sur Google · 289 avis. 48 bis Avenue Victor Hugo, Boulogne-Billancourt." />
+  <meta property="og:url" content="https://www.chezalexis-boulangerie.fr/" />
+  <meta property="og:image" content="https://www.chezalexis-boulangerie.fr/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Boulangerie Chez Alexis — Boulogne-Billancourt" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chez Alexis — Boulangerie Artisanale à Boulogne-Billancourt" />
+  <meta name="twitter:description" content="Pain au levain, croissants d'exception et Yogo signature. 4.9★ sur Google." />
+  <meta name="twitter:image" content="https://www.chezalexis-boulangerie.fr/assets/og-image.jpg" />
+
+  <!-- ── JSON-LD Structured Data ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Chez Alexis",
+    "alternateName": "Boulangerie Chez Alexis",
+    "legalName": "Maison Paviot",
+    "description": "Boulangerie artisanale fondée par Alexis Paviot, issu d'une famille de boulangers et pâtissiers. Pains au levain naturel, viennoiseries artisanales, pain cacao-pralinée signature et Yogo. 4.9★ sur Google, recommandé par Gault & Millau.",
+    "url": "https://www.chezalexis-boulangerie.fr",
+    "logo": "https://www.chezalexis-boulangerie.fr/assets/logo.svg",
+    "image": "https://www.chezalexis-boulangerie.fr/assets/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "48 bis Avenue Victor Hugo",
+      "addressLocality": "Boulogne-Billancourt",
+      "postalCode": "92100",
+      "addressCountry": "FR",
+      "addressRegion": "Île-de-France"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 48.8396,
+      "longitude": 2.2409
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "07:00",
+        "closes": "20:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "289",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "sameAs": [
+      "https://www.instagram.com/boulangeriechezalexis/",
+      "https://fr.gaultmillau.com/en/artisans/chez-alexis"
+    ],
+    "servesCuisine": "Boulangerie française",
+    "priceRange": "€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash, Credit Card"
+  }
+  </script>
+
+  <!-- ── Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="#hero" class="nav__logo">
-        <span class="nav__logo-text">Chez Alexis</span>
-        <span class="nav__logo-sub">Boulangerie Artisanale</span>
-      </a>
-      <ul class="nav__links">
-        <li><a href="#about">La Maison</a></li>
-        <li><a href="#products">Nos Créations</a></li>
-        <li><a href="#reviews">Avis</a></li>
-        <li><a href="#visit">Nous Trouver</a></li>
-      </ul>
-      <a href="#visit" class="nav__cta">Venir nous voir</a>
-      <button class="nav__burger" id="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav__mobile" id="mobile-menu">
-      <ul>
-        <li><a href="#about">La Maison</a></li>
-        <li><a href="#products">Nos Créations</a></li>
-        <li><a href="#reviews">Avis</a></li>
-        <li><a href="#visit">Nous Trouver</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- ════════════════════════════════
+       NAV
+  ════════════════════════════════ -->
+  <header role="banner">
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <div class="nav__inner">
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero__grain"></div>
-    <div class="hero__content">
-      <div class="hero__badge">
-        <span class="hero__stars">★★★★★</span>
-        <span>4.9 · 289 avis Google</span>
-      </div>
-      <h1 class="hero__title">
-        L'Art du <em>Pain</em><br>au Cœur de<br>Boulogne
-      </h1>
-      <p class="hero__subtitle">
-        Farines brutes, levains naturels, viennoiseries d'exception.<br>
-        Une boulangerie qui met du baume au cœur.
-      </p>
-      <div class="hero__actions">
-        <a href="#products" class="btn btn--primary">Découvrir nos créations</a>
-        <a href="#visit" class="btn btn--ghost">Nous trouver</a>
-      </div>
-    </div>
-    <div class="hero__visual">
-      <div class="hero__img-wrap">
-        <img src="assets/hero-bread.jpg" alt="Pain artisanal Chez Alexis" class="hero__img" onerror="this.parentElement.classList.add('hero__img-wrap--fallback')">
-        <div class="hero__img-overlay">
-          <div class="hero__tag">
-            <span>Recommandé par</span>
-            <strong>Gault &amp; Millau</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero__scroll" aria-hidden="true">
-      <span>Défiler</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-  </section>
+        <a href="#accueil" class="nav__logo" aria-label="Chez Alexis — accueil">
+          <img src="assets/logo.svg" alt="Logo Chez Alexis" class="nav__logo-img" width="48" height="48" />
+          <span class="nav__logo-text">
+            <span class="nav__logo-name">Chez Alexis</span>
+            <span class="nav__logo-sub">Boulangerie Artisanale</span>
+          </span>
+        </a>
 
-  <!-- RIBBON -->
-  <div class="ribbon">
-    <div class="ribbon__track">
-      <span>Pain au levain</span>
-      <span class="ribbon__dot">·</span>
-      <span>Croissants</span>
-      <span class="ribbon__dot">·</span>
-      <span>Yogo signature</span>
-      <span class="ribbon__dot">·</span>
-      <span>Pain cacao-pralinée</span>
-      <span class="ribbon__dot">·</span>
-      <span>Flan</span>
-      <span class="ribbon__dot">·</span>
-      <span>Focaccia</span>
-      <span class="ribbon__dot">·</span>
-      <span>Plat du jour</span>
-      <span class="ribbon__dot">·</span>
-      <span>Pain au levain</span>
-      <span class="ribbon__dot">·</span>
-      <span>Croissants</span>
-      <span class="ribbon__dot">·</span>
-      <span>Yogo signature</span>
-      <span class="ribbon__dot">·</span>
-      <span>Pain cacao-pralinée</span>
-      <span class="ribbon__dot">·</span>
-      <span>Flan</span>
-      <span class="ribbon__dot">·</span>
-      <span>Focaccia</span>
-      <span class="ribbon__dot">·</span>
-      <span>Plat du jour</span>
-      <span class="ribbon__dot">·</span>
-    </div>
-  </div>
+        <ul class="nav__links" role="list">
+          <li><a href="#maison">La Maison</a></li>
+          <li><a href="#creations">Nos Créations</a></li>
+          <li><a href="#presse">Presse</a></li>
+          <li><a href="#visiter">Nous Trouver</a></li>
+        </ul>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about__grid">
-        <div class="about__image">
-          <div class="about__img-box">
-            <img src="assets/alexis-baker.jpg" alt="Alexis Paviot, boulanger artisan" onerror="this.parentElement.classList.add('about__img-box--fallback')">
+        <a href="#visiter" class="nav__cta">Venir nous voir</a>
+
+        <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
+        <ul role="list">
+          <li><a href="#maison">La Maison</a></li>
+          <li><a href="#creations">Nos Créations</a></li>
+          <li><a href="#presse">Presse</a></li>
+          <li><a href="#visiter">Nous Trouver</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ════════════════════════════════
+         HERO
+    ════════════════════════════════ -->
+    <section class="hero" id="accueil" aria-label="Présentation">
+      <div class="hero__inner">
+
+        <div class="hero__content" data-reveal>
+          <div class="hero__badge" role="img" aria-label="Note : 4,9 sur 5 — 289 avis Google">
+            <span class="hero__stars" aria-hidden="true">★★★★★</span>
+            <span>4.9 · 289 avis Google</span>
           </div>
-          <div class="about__img-card">
-            <div class="about__img-card-icon">🌾</div>
-            <p>Farines brutes<br><strong>non transformées</strong></p>
-          </div>
-        </div>
-        <div class="about__content">
-          <span class="section-label">La Maison</span>
-          <h2 class="section-title">Une tradition<br>familiale, réinventée</h2>
-          <p class="about__text">
-            Alexis Paviot est né dans une famille de boulangers et pâtissiers. Chez Alexis, c'est l'histoire d'un savoir-faire transmis de génération en génération, sublimé par une passion intacte pour le bon pain.
+
+          <h1 class="hero__title">
+            L'Art du <em>Pain</em><br>
+            au Cœur de<br>
+            Boulogne
+          </h1>
+
+          <p class="hero__subtitle">
+            Farines brutes, levains naturels, viennoiseries d'exception.<br>
+            Souvent en rupture avant 10h — venez tôt.
           </p>
-          <p class="about__text">
-            Ici, tout commence par la matière première : des farines brutes, non transformées, travaillées avec soin. Les pains reposent sur des levains naturels, les viennoiseries sont façonnées à la main, et chaque création porte la signature d'un artisan qui ne fait aucun compromis.
-          </p>
-          <p class="about__text">
-            Plus qu'une boulangerie, Chez Alexis est un lieu de vie — avec sa terrasse, ses habitués, et cette odeur de pain chaud qui vous accueille dès l'avenue Victor Hugo.
-          </p>
-          <div class="about__stats">
-            <div class="about__stat">
-              <strong>4.9★</strong>
-              <span>sur Google<br>289 avis</span>
-            </div>
-            <div class="about__stat">
-              <strong>3</strong>
-              <span>variétés de<br>baguettes</span>
-            </div>
-            <div class="about__stat">
-              <strong>Gault<br>&amp; Millau</strong>
-              <span>recommandé</span>
-            </div>
+
+          <div class="hero__actions">
+            <a href="#creations" class="btn btn--primary">Découvrir nos créations</a>
+            <a href="#visiter" class="btn btn--outline">Nous trouver</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- PRODUCTS -->
-  <section class="products" id="products">
-    <div class="container">
-      <div class="products__header">
-        <span class="section-label">Nos Créations</span>
-        <h2 class="section-title">Fait chaque matin,<br>avec amour</h2>
-        <p class="products__intro">Du pain au cacao-pralinée aux Yogos signature, chaque produit est une invitation à savourer.</p>
-      </div>
-
-      <div class="products__grid">
-
-        <div class="product-card product-card--featured">
-          <div class="product-card__badge">Signature</div>
-          <div class="product-card__icon">🍫</div>
-          <h3 class="product-card__title">Pain Cacao-Pralinée</h3>
-          <p class="product-card__desc">Notre création la plus plébiscitée. Une mie généreuse aux éclats de pralinée et cacao, sur base de levain naturel. Un best-seller absolu.</p>
-          <span class="product-card__tag">Levain naturel</span>
-        </div>
-
-        <div class="product-card">
-          <div class="product-card__icon">🥐</div>
-          <h3 class="product-card__title">Viennoiseries</h3>
-          <p class="product-card__desc">Croissants beurrés, chaussons aux pommes, crêpes et roses des sables — des classiques maîtrisés à la perfection.</p>
-          <span class="product-card__tag">Fait main chaque matin</span>
-        </div>
-
-        <div class="product-card">
-          <div class="product-card__icon">🍞</div>
-          <h3 class="product-card__title">Pains Artisanaux</h3>
-          <p class="product-card__desc">Trois variétés de baguettes et une gamme complète de pains au levain : tradition, céréales, classique. Tous façonnés à partir de farines brutes.</p>
-          <span class="product-card__tag">3 variétés de baguettes</span>
-        </div>
-
-        <div class="product-card product-card--highlight">
-          <div class="product-card__badge">Nouveauté</div>
-          <div class="product-card__icon">🎂</div>
-          <h3 class="product-card__title">Yogo</h3>
-          <p class="product-card__desc">Notre chou signature, garni de pralinée, citron ou framboise selon la saison. Léger, généreux, inoubliable.</p>
-          <span class="product-card__tag">Saisonnier</span>
-        </div>
-
-        <div class="product-card">
-          <div class="product-card__icon">🍮</div>
-          <h3 class="product-card__title">Flan &amp; Pâtisseries</h3>
-          <p class="product-card__desc">Flan lait-œuf crémeux à l'ancienne, et une sélection de douceurs artisanales qui changent au gré des saisons.</p>
-          <span class="product-card__tag">Recette traditionnelle</span>
-        </div>
-
-        <div class="product-card">
-          <div class="product-card__icon">🥗</div>
-          <h3 class="product-card__title">Snacking &amp; Plat du Jour</h3>
-          <p class="product-card__desc">Salades fraîches de saison, sandwiches, focaccia et un nouveau plat chaud chaque jour. De quoi déjeuner comme à la maison.</p>
-          <span class="product-card__tag">Menu renouvelé chaque jour</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="reviews" id="reviews">
-    <div class="container">
-      <div class="reviews__header">
-        <span class="section-label">Ce qu'ils disent</span>
-        <h2 class="section-title">4.9 sur 5 —<br>ils adorent</h2>
-        <div class="reviews__score">
-          <div class="reviews__stars">★★★★★</div>
-          <div class="reviews__meta">289 avis Google · recommandé par Gault &amp; Millau</div>
-        </div>
-      </div>
-
-      <div class="reviews__grid">
-        <div class="review-card">
-          <div class="review-card__stars">★★★★★</div>
-          <p class="review-card__text">"Le pain cacao-pralinée, c'est tout simplement une découverte. Je n'en trouve nulle part ailleurs à Boulogne. Les croissants sont parfaitement feuilletés, on y revient chaque semaine."</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">M</div>
-            <div>
-              <strong>Marie L.</strong>
-              <span>Cliente fidèle</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card review-card--featured">
-          <div class="review-card__stars">★★★★★</div>
-          <p class="review-card__text">"La meilleure boulangerie de Boulogne-Billancourt, sans hésitation. Alexis est passionné, ça se sent dans chaque produit. Le Yogo à la framboise... un régal."</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">T</div>
-            <div>
-              <strong>Thomas R.</strong>
-              <span>Habitué du quartier</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-card__stars">★★★★★</div>
-          <p class="review-card__text">"Une boulangerie qui met du baume au cœur. L'accueil est chaleureux, les produits sont excellents et la terrasse est parfaite pour le café du matin."</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">S</div>
-            <div>
-              <strong>Sophie D.</strong>
-              <span>Résidente Boulogne</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reviews__press">
-        <div class="reviews__press-label">Recommandé par</div>
-        <div class="reviews__press-logos">
-          <div class="press-badge">
-            <span class="press-badge__name">Gault &amp; Millau</span>
-            <span class="press-badge__desc">Guide gastronomique</span>
-          </div>
-          <div class="press-badge">
-            <span class="press-badge__name">Le Petit Boulonnais</span>
-            <span class="press-badge__desc">Boulangeries incontournables</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISIT -->
-  <section class="visit" id="visit">
-    <div class="container">
-      <div class="visit__grid">
-        <div class="visit__info">
-          <span class="section-label">Nous Trouver</span>
-          <h2 class="section-title">Venez nous rendre visite</h2>
-          <p class="visit__desc">Installés au cœur de Boulogne-Billancourt, entre le Parc des Princes et Roland-Garros. On vous attend !</p>
-
-          <div class="visit__details">
-            <div class="visit__detail">
-              <div class="visit__detail-icon">📍</div>
-              <div>
-                <strong>Adresse</strong>
-                <span>48 bis Avenue Victor Hugo<br>92100 Boulogne-Billancourt</span>
+          <div class="hero__trust">
+            <div class="trust-badge">
+              <img src="assets/logo.svg" alt="Chez Alexis" class="trust-badge__logo" width="36" height="36" />
+              <div class="trust-badge__text">
+                <strong>Recommandé</strong>
+                <span>Gault &amp; Millau</span>
               </div>
             </div>
-            <div class="visit__detail">
-              <div class="visit__detail-icon">🕖</div>
-              <div>
-                <strong>Horaires</strong>
-                <span>Lundi — Samedi<br>7h00 – 20h00</span>
-              </div>
-            </div>
-            <div class="visit__detail">
-              <div class="visit__detail-icon">📱</div>
-              <div>
-                <strong>Suivez-nous</strong>
-                <a href="https://www.instagram.com/boulangeriechezalexis/" target="_blank" rel="noopener" class="visit__instagram">@boulangeriechezalexis</a>
+            <div class="trust-badge">
+              <span class="trust-badge__icon" aria-hidden="true">📰</span>
+              <div class="trust-badge__text">
+                <strong>Incontournable</strong>
+                <span>Le Petit Boulonnais</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="visit__map">
-          <iframe
-            title="Chez Alexis — 48 bis Avenue Victor Hugo, Boulogne-Billancourt"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=48+bis+Avenue+Victor+Hugo,+92100+Boulogne-Billancourt,+France"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-          <div class="visit__map-fallback">
-            <div class="visit__map-pin">📍</div>
-            <strong>48 bis Avenue Victor Hugo</strong>
-            <span>92100 Boulogne-Billancourt</span>
-            <a href="https://maps.google.com/?q=48+bis+Avenue+Victor+Hugo,+92100+Boulogne-Billancourt" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Ouvrir dans Google Maps</a>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__logo-display">
+            <img src="assets/logo.svg" alt="Chez Alexis — Boulangerie Artisanale" class="hero__logo-big" width="340" height="340" />
           </div>
+          <div class="hero__deco-ring hero__deco-ring--1"></div>
+          <div class="hero__deco-ring hero__deco-ring--2"></div>
+          <div class="hero__deco-ring hero__deco-ring--3"></div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         RIBBON
+    ════════════════════════════════ -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon__track">
+        <span>Pain au levain</span><span class="ribbon__sep">·</span>
+        <span>Croissants</span><span class="ribbon__sep">·</span>
+        <span>Yogo signature</span><span class="ribbon__sep">·</span>
+        <span>Pain cacao-pralinée</span><span class="ribbon__sep">·</span>
+        <span>Flan crémeux</span><span class="ribbon__sep">·</span>
+        <span>Focaccia</span><span class="ribbon__sep">·</span>
+        <span>Plat du jour</span><span class="ribbon__sep">·</span>
+        <span>Baguette artisanale</span><span class="ribbon__sep">·</span>
+        <span>Pain au levain</span><span class="ribbon__sep">·</span>
+        <span>Croissants</span><span class="ribbon__sep">·</span>
+        <span>Yogo signature</span><span class="ribbon__sep">·</span>
+        <span>Pain cacao-pralinée</span><span class="ribbon__sep">·</span>
+        <span>Flan crémeux</span><span class="ribbon__sep">·</span>
+        <span>Focaccia</span><span class="ribbon__sep">·</span>
+        <span>Plat du jour</span><span class="ribbon__sep">·</span>
+        <span>Baguette artisanale</span><span class="ribbon__sep">·</span>
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <div class="footer__logo">Chez Alexis</div>
-          <p class="footer__tagline">Boulangerie Artisanale<br>Boulogne-Billancourt</p>
-          <div class="footer__social">
-            <a href="https://www.instagram.com/boulangeriechezalexis/" target="_blank" rel="noopener" aria-label="Instagram Chez Alexis">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-              </svg>
-              Instagram
+    <!-- ════════════════════════════════
+         LA MAISON
+    ════════════════════════════════ -->
+    <section class="section maison" id="maison" aria-labelledby="maison-title">
+      <div class="container">
+        <div class="maison__grid">
+
+          <div class="maison__visual" data-reveal>
+            <div class="maison__logo-wrap">
+              <img src="assets/logo.svg" alt="Chez Alexis — Maison Paviot" class="maison__logo" width="260" height="260" />
+            </div>
+            <div class="maison__card maison__card--1" aria-label="Farines brutes non transformées">
+              <span aria-hidden="true">🌾</span>
+              <p>Farines brutes<br><strong>non transformées</strong></p>
+            </div>
+            <div class="maison__card maison__card--2" aria-label="Levain naturel">
+              <span aria-hidden="true">⏳</span>
+              <p>Levain<br><strong>naturel</strong></p>
+            </div>
+          </div>
+
+          <div class="maison__content" data-reveal>
+            <span class="label" aria-hidden="true">La Maison</span>
+            <h2 class="section-title" id="maison-title">
+              Une tradition familiale,<br>réinventée par passion
+            </h2>
+
+            <p class="maison__text">
+              Alexis Paviot est né dans une famille de boulangers et pâtissiers. Chez Alexis, c'est l'histoire d'un savoir-faire transmis de génération en génération, sublimé par une passion intacte pour le bon pain.
+            </p>
+            <p class="maison__text">
+              Ici, tout commence par la matière première : des farines brutes, non transformées, travaillées avec soin. Les pains reposent sur des levains naturels à longue fermentation, les viennoiseries sont façonnées à la main — chaque produit porte la signature d'un artisan qui ne fait aucun compromis.
+            </p>
+            <p class="maison__text">
+              Plus qu'une boulangerie, Chez Alexis est un lieu de vie. Sa terrasse, ses habitués, et cette odeur de pain chaud qui vous accueille dès l'avenue Victor Hugo en font <strong>un véritable repère du quartier</strong>.
+            </p>
+
+            <div class="maison__stats" role="list" aria-label="Chiffres clés">
+              <div class="stat" role="listitem">
+                <strong class="stat__value">4.9★</strong>
+                <span class="stat__label">sur Google<br>289 avis</span>
+              </div>
+              <div class="stat" role="listitem">
+                <strong class="stat__value">3</strong>
+                <span class="stat__label">variétés de<br>baguettes</span>
+              </div>
+              <div class="stat" role="listitem">
+                <strong class="stat__value">Gault<br>&amp; Millau</strong>
+                <span class="stat__label">recommandé</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         NOS CRÉATIONS
+    ════════════════════════════════ -->
+    <section class="section creations" id="creations" aria-labelledby="creations-title">
+      <div class="container">
+
+        <header class="section-header" data-reveal>
+          <span class="label" aria-hidden="true">Nos Créations</span>
+          <h2 class="section-title" id="creations-title">
+            Fait chaque matin,<br>avec amour
+          </h2>
+          <p class="section-intro">
+            Du pain au cacao-pralinée aux Yogos signature — souvent en rupture avant 10h, venez tôt pour ne rien manquer.
+          </p>
+        </header>
+
+        <ul class="creations__grid" role="list">
+
+          <li class="product-card product-card--hero" data-reveal>
+            <div class="product-card__badge">Signature</div>
+            <div class="product-card__icon" aria-hidden="true">🍫</div>
+            <h3 class="product-card__title">Pain Cacao-Pralinée</h3>
+            <p class="product-card__desc">
+              Notre création la plus plébiscitée. Une mie généreuse aux éclats de pralinée et cacao, travaillée sur base de levain naturel. Le best-seller absolu de la maison.
+            </p>
+            <span class="product-card__tag">Levain naturel · Best-seller</span>
+          </li>
+
+          <li class="product-card" data-reveal>
+            <div class="product-card__icon" aria-hidden="true">🥐</div>
+            <h3 class="product-card__title">Viennoiseries</h3>
+            <p class="product-card__desc">
+              Croissants feuilletés au beurre, chaussons aux pommes, crêpe du papa et roses des sables de maman. Des classiques maîtrisés à la perfection.
+            </p>
+            <span class="product-card__tag">Façonnés à la main · Chaque matin</span>
+          </li>
+
+          <li class="product-card" data-reveal>
+            <div class="product-card__icon" aria-hidden="true">🍞</div>
+            <h3 class="product-card__title">Pains Artisanaux</h3>
+            <p class="product-card__desc">
+              Trois variétés de baguettes et une gamme complète de pains sur levain naturel : tradition, céréales, classique. Façonnés à partir de farines brutes non transformées.
+            </p>
+            <span class="product-card__tag">3 variétés · Farines brutes</span>
+          </li>
+
+          <li class="product-card product-card--accent" data-reveal>
+            <div class="product-card__badge">Nouveauté</div>
+            <div class="product-card__icon" aria-hidden="true">🎂</div>
+            <h3 class="product-card__title">Yogo</h3>
+            <p class="product-card__desc">
+              Notre chou signature, garni de pralinée, citron ou framboise selon la saison. Léger, généreux, inoubliable. Une exclusivité Chez Alexis.
+            </p>
+            <span class="product-card__tag">Saisonnier · Exclusivité maison</span>
+          </li>
+
+          <li class="product-card" data-reveal>
+            <div class="product-card__icon" aria-hidden="true">🍮</div>
+            <h3 class="product-card__title">Flan &amp; Pâtisseries</h3>
+            <p class="product-card__desc">
+              Flan lait-œuf crémeux façon ancienne et une sélection de douceurs artisanales qui changent au fil des saisons.
+            </p>
+            <span class="product-card__tag">Recette traditionnelle</span>
+          </li>
+
+          <li class="product-card" data-reveal>
+            <div class="product-card__icon" aria-hidden="true">🥗</div>
+            <h3 class="product-card__title">Snacking &amp; Plat du Jour</h3>
+            <p class="product-card__desc">
+              Salades fraîches de saison, sandwiches, hot dogs, focaccia et un nouveau plat chaud chaque jour. Déjeuner comme à la maison.
+            </p>
+            <span class="product-card__tag">Menu renouvelé chaque jour</span>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         PRESSE & AVIS
+    ════════════════════════════════ -->
+    <section class="section presse" id="presse" aria-labelledby="presse-title">
+      <div class="container">
+
+        <header class="section-header" data-reveal>
+          <span class="label" aria-hidden="true">Presse &amp; Avis</span>
+          <h2 class="section-title" id="presse-title">
+            Ils en parlent mieux<br>que nous
+          </h2>
+          <div class="presse__score" aria-label="Note moyenne : 4,9 sur 5 — 289 avis Google">
+            <span class="presse__stars" aria-hidden="true">★★★★★</span>
+            <span class="presse__meta">4.9 / 5 · 289 avis Google</span>
+          </div>
+        </header>
+
+        <!-- Press quote -->
+        <article class="press-quote" data-reveal aria-label="Citation presse — Le Petit Boulonnais">
+          <blockquote class="press-quote__block">
+            <p>
+              "La boulangerie qui murmure 4,9 étoiles à l'oreille des amateurs de levain et de viennoiseries réussies. Souvent en rupture avant 10h&nbsp;— la patience est de rigueur, idéalement avec un bon café à emporter."
+            </p>
+          </blockquote>
+          <footer class="press-quote__source">
+            <span class="press-quote__pub">Le Petit Boulonnais</span>
+            <span class="press-quote__context">— Les boulangeries incontournables de Boulogne-Billancourt, décembre 2025</span>
+          </footer>
+        </article>
+
+        <!-- Review cards -->
+        <ul class="reviews__grid" role="list" aria-label="Avis clients">
+
+          <li class="review-card" data-reveal>
+            <div class="review-card__stars" aria-label="5 étoiles" aria-hidden="true">★★★★★</div>
+            <p class="review-card__text">
+              "Le pain cacao-pralinée, c'est tout simplement une découverte. Je n'en trouve nulle part ailleurs à Boulogne. Les croissants sont parfaitement feuilletés — on y revient chaque semaine."
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true">M</div>
+              <div>
+                <strong>Marie L.</strong>
+                <span>Cliente fidèle</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="review-card review-card--featured" data-reveal>
+            <div class="review-card__stars" aria-label="5 étoiles" aria-hidden="true">★★★★★</div>
+            <p class="review-card__text">
+              "La meilleure boulangerie de Boulogne-Billancourt, sans hésitation. Alexis est passionné, ça se sent dans chaque produit. Le Yogo à la framboise... un régal absolu."
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true">T</div>
+              <div>
+                <strong>Thomas R.</strong>
+                <span>Habitué du quartier</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="review-card" data-reveal>
+            <div class="review-card__stars" aria-label="5 étoiles" aria-hidden="true">★★★★★</div>
+            <p class="review-card__text">
+              "Une boulangerie qui met du baume au cœur. L'accueil est chaleureux, les produits excellents et la terrasse est parfaite pour le café du matin. Un incontournable."
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true">S</div>
+              <div>
+                <strong>Sophie D.</strong>
+                <span>Résidente Boulogne</span>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Press logos -->
+        <div class="press-logos" data-reveal aria-label="Recommandations presse">
+          <p class="press-logos__label">Recommandé par</p>
+          <ul class="press-logos__list" role="list">
+            <li class="press-logo-card">
+              <strong class="press-logo-card__name">Gault &amp; Millau</strong>
+              <span class="press-logo-card__desc">Guide gastronomique français</span>
+            </li>
+            <li class="press-logo-card">
+              <strong class="press-logo-card__name">Le Petit Boulonnais</strong>
+              <span class="press-logo-card__desc">Boulangeries incontournables</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         NOUS TROUVER
+    ════════════════════════════════ -->
+    <section class="section visiter" id="visiter" aria-labelledby="visiter-title">
+      <div class="container">
+        <div class="visiter__grid">
+
+          <div class="visiter__info" data-reveal>
+            <span class="label" aria-hidden="true">Nous Trouver</span>
+            <h2 class="section-title" id="visiter-title">
+              Venez nous<br>rendre visite
+            </h2>
+            <p class="visiter__desc">
+              Au cœur de Boulogne-Billancourt, entre le Parc des Princes et Roland-Garros. On vous attend avec un croissant chaud.
+            </p>
+
+            <address class="visiter__details" aria-label="Coordonnées de la boulangerie">
+              <div class="visiter__detail">
+                <span class="visiter__detail-icon" aria-hidden="true">📍</span>
+                <div>
+                  <strong>Adresse</strong>
+                  <span>48 bis Avenue Victor Hugo<br>92100 Boulogne-Billancourt</span>
+                </div>
+              </div>
+              <div class="visiter__detail">
+                <span class="visiter__detail-icon" aria-hidden="true">🕖</span>
+                <div>
+                  <strong>Horaires</strong>
+                  <span>
+                    <time datetime="Mo-Sa 07:00-20:00">Lundi — Samedi : 7h00 – 20h00</time>
+                  </span>
+                </div>
+              </div>
+              <div class="visiter__detail">
+                <span class="visiter__detail-icon" aria-hidden="true">📱</span>
+                <div>
+                  <strong>Instagram</strong>
+                  <a href="https://www.instagram.com/boulangeriechezalexis/" target="_blank" rel="noopener noreferrer" class="visiter__ig">@boulangeriechezalexis</a>
+                </div>
+              </div>
+            </address>
+
+            <a href="https://maps.google.com/?q=48+bis+Avenue+Victor+Hugo,+92100+Boulogne-Billancourt" target="_blank" rel="noopener noreferrer" class="btn btn--primary visiter__maps-btn">
+              Ouvrir dans Google Maps
             </a>
           </div>
-        </div>
-        <div class="footer__col">
-          <h4>La Boulangerie</h4>
-          <ul>
-            <li><a href="#about">La Maison</a></li>
-            <li><a href="#products">Nos Créations</a></li>
-            <li><a href="#reviews">Avis Clients</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Informations</h4>
-          <ul>
-            <li>48 bis Av. Victor Hugo</li>
-            <li>92100 Boulogne-Billancourt</li>
-            <li>Lun – Sam : 7h00 – 20h00</li>
-          </ul>
+
+          <div class="visiter__map" data-reveal>
+            <iframe
+              title="Localisation Chez Alexis — 48 bis Avenue Victor Hugo, Boulogne-Billancourt"
+              src="https://maps.google.com/maps?q=48+bis+Avenue+Victor+Hugo,+92100+Boulogne-Billancourt&output=embed"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              aria-label="Carte Google Maps — Chez Alexis">
+            </iframe>
+          </div>
+
         </div>
       </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════
+       FOOTER
+  ════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <img src="assets/logo.svg" alt="Chez Alexis" class="footer__logo" width="72" height="72" />
+          <p class="footer__tagline">Boulangerie Artisanale<br>Boulogne-Billancourt</p>
+          <a href="https://www.instagram.com/boulangeriechezalexis/" target="_blank" rel="noopener noreferrer" class="footer__ig" aria-label="Instagram Chez Alexis">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+            @boulangeriechezalexis
+          </a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Liens du pied de page">
+          <h3 class="footer__nav-title">La Boulangerie</h3>
+          <ul role="list">
+            <li><a href="#maison">La Maison</a></li>
+            <li><a href="#creations">Nos Créations</a></li>
+            <li><a href="#presse">Presse &amp; Avis</a></li>
+            <li><a href="#visiter">Nous Trouver</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__contact">
+          <h3 class="footer__nav-title">Informations</h3>
+          <address>
+            <p>48 bis Av. Victor Hugo<br>92100 Boulogne-Billancourt</p>
+            <p><time datetime="Mo-Sa 07:00-20:00">Lun – Sam : 7h00 – 20h00</time></p>
+          </address>
+        </div>
+
+      </div>
+
       <div class="footer__bottom">
         <p>&copy; 2025 Chez Alexis — Maison Paviot. Tous droits réservés.</p>
       </div>

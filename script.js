@@ -2,80 +2,69 @@
    CHEZ ALEXIS — Interactions
    ============================================ */
 
-// Nav scroll behavior
+// ── Nav scroll ──
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('nav--scrolled', window.scrollY > 40);
-}, { passive: true });
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 48);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
-// Mobile burger menu
+// ── Mobile burger ──
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobile-menu');
+
 burger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('is-open');
+  const isOpen = mobileMenu.classList.toggle('is-open');
+  burger.setAttribute('aria-expanded', isOpen);
+  mobileMenu.setAttribute('aria-hidden', !isOpen);
 });
+
 mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('is-open'));
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+  });
 });
 
-// Smooth reveal on scroll
-const observer = new IntersectionObserver((entries) => {
+// ── Scroll reveal ──
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const delay = el.dataset.delay || 0;
+    setTimeout(() => el.classList.add('is-visible'), delay);
+    revealObserver.unobserve(el);
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+// Stagger children of grids
+document.querySelectorAll('.creations__grid, .reviews__grid, .maison__stats, .press-logos__list').forEach(grid => {
+  grid.querySelectorAll(':scope > *').forEach((child, i) => {
+    child.setAttribute('data-reveal', '');
+    child.dataset.delay = i * 90;
+  });
+});
+
+document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+// ── Active nav link on scroll ──
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav__links a');
+
+const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
+    if (!entry.isIntersecting) return;
+    const id = entry.target.id;
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+    });
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+}, { rootMargin: '-40% 0px -55% 0px' });
 
-document.querySelectorAll('.product-card, .review-card, .about__stat, .press-badge, .visit__detail').forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = `opacity 0.6s ease ${i * 0.08}s, transform 0.6s ease ${i * 0.08}s`;
-  observer.observe(el);
-});
+sections.forEach(s => sectionObserver.observe(s));
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.is-visible, [style*="opacity"]').forEach(el => {
-    el.addEventListener('transitionend', () => {
-      el.style.willChange = 'auto';
-    }, { once: true });
-  });
-});
-
-// IntersectionObserver visible callback
-const visibleObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.product-card, .review-card, .about__stat, .press-badge, .visit__detail').forEach(el => {
-  visibleObserver.observe(el);
-});
-
-// Map iframe fallback (show fallback div if iframe fails)
-const iframe = document.querySelector('.visit__map iframe');
-const fallback = document.querySelector('.visit__map-fallback');
-if (iframe && fallback) {
-  iframe.addEventListener('error', () => {
-    iframe.style.display = 'none';
-    fallback.style.display = 'flex';
-  });
-  // Check if iframe loaded properly after timeout
-  setTimeout(() => {
-    try {
-      if (!iframe.contentDocument && !iframe.contentWindow) {
-        iframe.style.display = 'none';
-        fallback.style.display = 'flex';
-      }
-    } catch (e) {
-      // Cross-origin — iframe loaded fine, keep it
-    }
-  }, 3000);
-  // Hide fallback initially
-  fallback.style.display = 'none';
+// ── Map iframe graceful fallback ──
+const mapIframe = document.querySelector('.visiter__map iframe');
+if (mapIframe) {
+  mapIframe.addEventListener('error', () => mapIframe.remove());
 }
