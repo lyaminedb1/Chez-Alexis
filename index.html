@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chez Alexis — Boulangerie Artisanale · Boulogne-Billancourt</title>
+  <meta name="description" content="Boulangerie artisanale Chez Alexis à Boulogne-Billancourt. Pains au levain, viennoiseries, Yogo signature. 4.9★ sur Google. 48 bis Avenue Victor Hugo.">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-text">Chez Alexis</span>
+        <span class="nav__logo-sub">Boulangerie Artisanale</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#about">La Maison</a></li>
+        <li><a href="#products">Nos Créations</a></li>
+        <li><a href="#reviews">Avis</a></li>
+        <li><a href="#visit">Nous Trouver</a></li>
+      </ul>
+      <a href="#visit" class="nav__cta">Venir nous voir</a>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobile-menu">
+      <ul>
+        <li><a href="#about">La Maison</a></li>
+        <li><a href="#products">Nos Créations</a></li>
+        <li><a href="#reviews">Avis</a></li>
+        <li><a href="#visit">Nous Trouver</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__grain"></div>
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__stars">★★★★★</span>
+        <span>4.9 · 289 avis Google</span>
+      </div>
+      <h1 class="hero__title">
+        L'Art du <em>Pain</em><br>au Cœur de<br>Boulogne
+      </h1>
+      <p class="hero__subtitle">
+        Farines brutes, levains naturels, viennoiseries d'exception.<br>
+        Une boulangerie qui met du baume au cœur.
+      </p>
+      <div class="hero__actions">
+        <a href="#products" class="btn btn--primary">Découvrir nos créations</a>
+        <a href="#visit" class="btn btn--ghost">Nous trouver</a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__img-wrap">
+        <img src="assets/hero-bread.jpg" alt="Pain artisanal Chez Alexis" class="hero__img" onerror="this.parentElement.classList.add('hero__img-wrap--fallback')">
+        <div class="hero__img-overlay">
+          <div class="hero__tag">
+            <span>Recommandé par</span>
+            <strong>Gault &amp; Millau</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Défiler</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- RIBBON -->
+  <div class="ribbon">
+    <div class="ribbon__track">
+      <span>Pain au levain</span>
+      <span class="ribbon__dot">·</span>
+      <span>Croissants</span>
+      <span class="ribbon__dot">·</span>
+      <span>Yogo signature</span>
+      <span class="ribbon__dot">·</span>
+      <span>Pain cacao-pralinée</span>
+      <span class="ribbon__dot">·</span>
+      <span>Flan</span>
+      <span class="ribbon__dot">·</span>
+      <span>Focaccia</span>
+      <span class="ribbon__dot">·</span>
+      <span>Plat du jour</span>
+      <span class="ribbon__dot">·</span>
+      <span>Pain au levain</span>
+      <span class="ribbon__dot">·</span>
+      <span>Croissants</span>
+      <span class="ribbon__dot">·</span>
+      <span>Yogo signature</span>
+      <span class="ribbon__dot">·</span>
+      <span>Pain cacao-pralinée</span>
+      <span class="ribbon__dot">·</span>
+      <span>Flan</span>
+      <span class="ribbon__dot">·</span>
+      <span>Focaccia</span>
+      <span class="ribbon__dot">·</span>
+      <span>Plat du jour</span>
+      <span class="ribbon__dot">·</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image">
+          <div class="about__img-box">
+            <img src="assets/alexis-baker.jpg" alt="Alexis Paviot, boulanger artisan" onerror="this.parentElement.classList.add('about__img-box--fallback')">
+          </div>
+          <div class="about__img-card">
+            <div class="about__img-card-icon">🌾</div>
+            <p>Farines brutes<br><strong>non transformées</strong></p>
+          </div>
+        </div>
+        <div class="about__content">
+          <span class="section-label">La Maison</span>
+          <h2 class="section-title">Une tradition<br>familiale, réinventée</h2>
+          <p class="about__text">
+            Alexis Paviot est né dans une famille de boulangers et pâtissiers. Chez Alexis, c'est l'histoire d'un savoir-faire transmis de génération en génération, sublimé par une passion intacte pour le bon pain.
+          </p>
+          <p class="about__text">
+            Ici, tout commence par la matière première : des farines brutes, non transformées, travaillées avec soin. Les pains reposent sur des levains naturels, les viennoiseries sont façonnées à la main, et chaque création porte la signature d'un artisan qui ne fait aucun compromis.
+          </p>
+          <p class="about__text">
+            Plus qu'une boulangerie, Chez Alexis est un lieu de vie — avec sa terrasse, ses habitués, et cette odeur de pain chaud qui vous accueille dès l'avenue Victor Hugo.
+          </p>
+          <div class="about__stats">
+            <div class="about__stat">
+              <strong>4.9★</strong>
+              <span>sur Google<br>289 avis</span>
+            </div>
+            <div class="about__stat">
+              <strong>3</strong>
+              <span>variétés de<br>baguettes</span>
+            </div>
+            <div class="about__stat">
+              <strong>Gault<br>&amp; Millau</strong>
+              <span>recommandé</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="products__header">
+        <span class="section-label">Nos Créations</span>
+        <h2 class="section-title">Fait chaque matin,<br>avec amour</h2>
+        <p class="products__intro">Du pain au cacao-pralinée aux Yogos signature, chaque produit est une invitation à savourer.</p>
+      </div>
+
+      <div class="products__grid">
+
+        <div class="product-card product-card--featured">
+          <div class="product-card__badge">Signature</div>
+          <div class="product-card__icon">🍫</div>
+          <h3 class="product-card__title">Pain Cacao-Pralinée</h3>
+          <p class="product-card__desc">Notre création la plus plébiscitée. Une mie généreuse aux éclats de pralinée et cacao, sur base de levain naturel. Un best-seller absolu.</p>
+          <span class="product-card__tag">Levain naturel</span>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__icon">🥐</div>
+          <h3 class="product-card__title">Viennoiseries</h3>
+          <p class="product-card__desc">Croissants beurrés, chaussons aux pommes, crêpes et roses des sables — des classiques maîtrisés à la perfection.</p>
+          <span class="product-card__tag">Fait main chaque matin</span>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__icon">🍞</div>
+          <h3 class="product-card__title">Pains Artisanaux</h3>
+          <p class="product-card__desc">Trois variétés de baguettes et une gamme complète de pains au levain : tradition, céréales, classique. Tous façonnés à partir de farines brutes.</p>
+          <span class="product-card__tag">3 variétés de baguettes</span>
+        </div>
+
+        <div class="product-card product-card--highlight">
+          <div class="product-card__badge">Nouveauté</div>
+          <div class="product-card__icon">🎂</div>
+          <h3 class="product-card__title">Yogo</h3>
+          <p class="product-card__desc">Notre chou signature, garni de pralinée, citron ou framboise selon la saison. Léger, généreux, inoubliable.</p>
+          <span class="product-card__tag">Saisonnier</span>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__icon">🍮</div>
+          <h3 class="product-card__title">Flan &amp; Pâtisseries</h3>
+          <p class="product-card__desc">Flan lait-œuf crémeux à l'ancienne, et une sélection de douceurs artisanales qui changent au gré des saisons.</p>
+          <span class="product-card__tag">Recette traditionnelle</span>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__icon">🥗</div>
+          <h3 class="product-card__title">Snacking &amp; Plat du Jour</h3>
+          <p class="product-card__desc">Salades fraîches de saison, sandwiches, focaccia et un nouveau plat chaud chaque jour. De quoi déjeuner comme à la maison.</p>
+          <span class="product-card__tag">Menu renouvelé chaque jour</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reviews__header">
+        <span class="section-label">Ce qu'ils disent</span>
+        <h2 class="section-title">4.9 sur 5 —<br>ils adorent</h2>
+        <div class="reviews__score">
+          <div class="reviews__stars">★★★★★</div>
+          <div class="reviews__meta">289 avis Google · recommandé par Gault &amp; Millau</div>
+        </div>
+      </div>
+
+      <div class="reviews__grid">
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"Le pain cacao-pralinée, c'est tout simplement une découverte. Je n'en trouve nulle part ailleurs à Boulogne. Les croissants sont parfaitement feuilletés, on y revient chaque semaine."</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">M</div>
+            <div>
+              <strong>Marie L.</strong>
+              <span>Cliente fidèle</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card review-card--featured">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"La meilleure boulangerie de Boulogne-Billancourt, sans hésitation. Alexis est passionné, ça se sent dans chaque produit. Le Yogo à la framboise... un régal."</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">T</div>
+            <div>
+              <strong>Thomas R.</strong>
+              <span>Habitué du quartier</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"Une boulangerie qui met du baume au cœur. L'accueil est chaleureux, les produits sont excellents et la terrasse est parfaite pour le café du matin."</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">S</div>
+            <div>
+              <strong>Sophie D.</strong>
+              <span>Résidente Boulogne</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews__press">
+        <div class="reviews__press-label">Recommandé par</div>
+        <div class="reviews__press-logos">
+          <div class="press-badge">
+            <span class="press-badge__name">Gault &amp; Millau</span>
+            <span class="press-badge__desc">Guide gastronomique</span>
+          </div>
+          <div class="press-badge">
+            <span class="press-badge__name">Le Petit Boulonnais</span>
+            <span class="press-badge__desc">Boulangeries incontournables</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="container">
+      <div class="visit__grid">
+        <div class="visit__info">
+          <span class="section-label">Nous Trouver</span>
+          <h2 class="section-title">Venez nous rendre visite</h2>
+          <p class="visit__desc">Installés au cœur de Boulogne-Billancourt, entre le Parc des Princes et Roland-Garros. On vous attend !</p>
+
+          <div class="visit__details">
+            <div class="visit__detail">
+              <div class="visit__detail-icon">📍</div>
+              <div>
+                <strong>Adresse</strong>
+                <span>48 bis Avenue Victor Hugo<br>92100 Boulogne-Billancourt</span>
+              </div>
+            </div>
+            <div class="visit__detail">
+              <div class="visit__detail-icon">🕖</div>
+              <div>
+                <strong>Horaires</strong>
+                <span>Lundi — Samedi<br>7h00 – 20h00</span>
+              </div>
+            </div>
+            <div class="visit__detail">
+              <div class="visit__detail-icon">📱</div>
+              <div>
+                <strong>Suivez-nous</strong>
+                <a href="https://www.instagram.com/boulangeriechezalexis/" target="_blank" rel="noopener" class="visit__instagram">@boulangeriechezalexis</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visit__map">
+          <iframe
+            title="Chez Alexis — 48 bis Avenue Victor Hugo, Boulogne-Billancourt"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=48+bis+Avenue+Victor+Hugo,+92100+Boulogne-Billancourt,+France"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="visit__map-fallback">
+            <div class="visit__map-pin">📍</div>
+            <strong>48 bis Avenue Victor Hugo</strong>
+            <span>92100 Boulogne-Billancourt</span>
+            <a href="https://maps.google.com/?q=48+bis+Avenue+Victor+Hugo,+92100+Boulogne-Billancourt" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Ouvrir dans Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">Chez Alexis</div>
+          <p class="footer__tagline">Boulangerie Artisanale<br>Boulogne-Billancourt</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/boulangeriechezalexis/" target="_blank" rel="noopener" aria-label="Instagram Chez Alexis">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>La Boulangerie</h4>
+          <ul>
+            <li><a href="#about">La Maison</a></li>
+            <li><a href="#products">Nos Créations</a></li>
+            <li><a href="#reviews">Avis Clients</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Informations</h4>
+          <ul>
+            <li>48 bis Av. Victor Hugo</li>
+            <li>92100 Boulogne-Billancourt</li>
+            <li>Lun – Sam : 7h00 – 20h00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Chez Alexis — Maison Paviot. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
