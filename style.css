@@ -1566,12 +1566,12 @@ address { font-style: normal; }
   object-fit: cover;
   transition: transform 0.4s var(--ease);
 }
-/* Placeholder gradient tiles until real images are added */
-.instagram-post__img--1 { background: linear-gradient(135deg, #1B3070 0%, #2D4A9E 100%); }
-.instagram-post__img--2 { background: linear-gradient(135deg, #C8922A 0%, #E8B84B 100%); }
-.instagram-post__img--3 { background: linear-gradient(135deg, #2D4A9E 0%, #4A6CC0 100%); }
-.instagram-post__img--4 { background: linear-gradient(135deg, #0F1E4A 0%, #1B3070 100%); }
-.instagram-post__img--5 { background: linear-gradient(135deg, #E8B84B 0%, #C8922A 100%); }
+/* Real bakery photos — replace with Alexis's actual Instagram photos later */
+.instagram-post__img--1 { background: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&fit=crop&q=80') center/cover no-repeat; }
+.instagram-post__img--2 { background: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop&q=80') center/cover no-repeat; }
+.instagram-post__img--3 { background: url('https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=600&h=600&fit=crop&q=80') center/cover no-repeat; }
+.instagram-post__img--4 { background: url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=600&h=600&fit=crop&q=80') center/cover no-repeat; }
+.instagram-post__img--5 { background: url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&h=600&fit=crop&q=80') center/cover no-repeat; }
 .instagram-post__overlay {
   position: absolute;
   inset: 0;
