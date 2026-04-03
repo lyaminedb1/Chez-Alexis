@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carte Fidélité — Chez Alexis | Boulangerie Boulogne-Billancourt</title>
+  <meta name="description" content="Rejoignez le programme fidélité de la Boulangerie Chez Alexis. 10 achats = 1 viennoiserie offerte. Créez votre carte gratuitement." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.chezalexis-boulangerie.fr/fidelite.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header role="banner">
+    <nav class="nav scrolled" id="nav" aria-label="Navigation principale">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="Chez Alexis — accueil">
+          <img src="assets/logo.svg" alt="Logo Chez Alexis" class="nav__logo-img" width="48" height="48" />
+          <span class="nav__logo-text">
+            <span class="nav__logo-name">Chez Alexis</span>
+            <span class="nav__logo-sub">Boulangerie Artisanale</span>
+          </span>
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html#maison">La Maison</a></li>
+          <li><a href="index.html#creations">Nos Créations</a></li>
+          <li><a href="commander.html">Commander</a></li>
+          <li><a href="fidelite.html" class="nav__link--active">Carte Fidélité</a></li>
+          <li><a href="index.html#visiter">Nous Trouver</a></li>
+        </ul>
+        <a href="commander.html" class="nav__cta">Commander</a>
+        <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
+        <ul role="list">
+          <li><a href="index.html#maison">La Maison</a></li>
+          <li><a href="index.html#creations">Nos Créations</a></li>
+          <li><a href="commander.html">Commander</a></li>
+          <li><a href="fidelite.html">Carte Fidélité</a></li>
+          <li><a href="index.html#visiter">Nous Trouver</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero__content">
+          <span class="label">Programme Fidélité</span>
+          <h1 class="page-hero__title">Revenez souvent,<br>soyez récompensé</h1>
+          <p class="page-hero__sub">10 achats chez Alexis = 1 viennoiserie entièrement offerte. Gratuit, sans application, sans contrainte.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOYALTY SECTION -->
+    <section class="loyalty-section">
+      <div class="container">
+        <div class="loyalty-layout">
+
+          <!-- LEFT: Register or Show Card -->
+          <div class="loyalty-main">
+
+            <!-- REGISTER FORM (shown when no card) -->
+            <div class="loyalty-register" id="loyalty-register">
+              <h2 class="loyalty-register__title">Créez votre carte</h2>
+              <p class="loyalty-register__sub">Renseignez vos informations et obtenez votre numéro de carte instantanément.</p>
+
+              <!-- 📌 REPLACE: remplacer YOUR_FORMSPREE_ID par l'ID obtenu sur formspree.io -->
+              <form class="loyalty-form" id="loyalty-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                <input type="hidden" name="_subject" value="Nouvelle Carte Fidélité — Chez Alexis" />
+
+                <div class="form-group">
+                  <label for="loy-name" class="form-label">Prénom &amp; Nom <span aria-hidden="true">*</span></label>
+                  <input type="text" id="loy-name" name="nom" class="form-input" placeholder="Marie Dupont" required autocomplete="name" />
+                </div>
+                <div class="form-row form-row--2col">
+                  <div class="form-group">
+                    <label for="loy-email" class="form-label">Email <span aria-hidden="true">*</span></label>
+                    <input type="email" id="loy-email" name="email" class="form-input" placeholder="marie@email.com" required autocomplete="email" />
+                  </div>
+                  <div class="form-group">
+                    <label for="loy-phone" class="form-label">Téléphone</label>
+                    <input type="tel" id="loy-phone" name="telephone" class="form-input" placeholder="06 12 34 56 78" autocomplete="tel" />
+                  </div>
+                </div>
+                <input type="hidden" name="carte_id" id="loy-card-id-input" />
+
+                <button type="submit" class="btn btn--primary btn--lg" style="width:100%">
+                  Obtenir ma carte fidélité gratuite
+                </button>
+              </form>
+            </div>
+
+            <!-- CARD DISPLAY (shown after registration) -->
+            <div class="loyalty-card-wrap" id="loyalty-card-wrap" hidden>
+
+              <div class="loyalty-card" id="loyalty-card" role="img" aria-label="Votre carte fidélité Chez Alexis">
+                <div class="loyalty-card__header">
+                  <img src="assets/logo.svg" alt="Chez Alexis" class="loyalty-card__logo" width="56" height="56" />
+                  <div>
+                    <div class="loyalty-card__brand">Chez Alexis</div>
+                    <div class="loyalty-card__sub">Carte Fidélité</div>
+                  </div>
+                </div>
+
+                <div class="loyalty-card__owner">
+                  <span class="loyalty-card__owner-label">Titulaire</span>
+                  <strong class="loyalty-card__owner-name" id="card-owner-name">—</strong>
+                </div>
+
+                <div class="loyalty-card__stamps" id="card-stamps" role="list" aria-label="Tampons de fidélité">
+                  <!-- Generated by JS -->
+                </div>
+
+                <div class="loyalty-card__footer">
+                  <div class="loyalty-card__progress">
+                    <span id="card-count">0</span>/10 tampons
+                  </div>
+                  <div class="loyalty-card__id" id="card-id-display">CA-0000</div>
+                </div>
+              </div>
+
+              <!-- Reward unlocked banner -->
+              <div class="loyalty-reward" id="loyalty-reward" hidden>
+                <span class="loyalty-reward__icon" aria-hidden="true">🎉</span>
+                <div>
+                  <strong>Félicitations !</strong>
+                  <p>Vous avez atteint 10 tampons. Présentez cette carte à Alexis pour recevoir votre viennoiserie offerte !</p>
+                </div>
+              </div>
+
+              <div class="loyalty-card-actions">
+                <p class="loyalty-card-hint">
+                  💡 Montrez cette page à Alexis à chaque visite. Il ajoutera un tampon sur votre carte.
+                </p>
+                <div class="loyalty-card-btns">
+                  <a href="commander.html" class="btn btn--primary">Commander ma prochaine visite</a>
+                  <button class="btn btn--outline" id="reset-card-btn">Réinitialiser la carte</button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- RIGHT SIDEBAR -->
+          <aside class="loyalty-sidebar" aria-label="Informations sur le programme fidélité">
+
+            <div class="sidebar-card">
+              <h2 class="sidebar-card__title">Comment ça marche ?</h2>
+              <ol class="sidebar-steps">
+                <li class="sidebar-step">
+                  <span class="sidebar-step__num">1</span>
+                  <div>
+                    <strong>Créez votre carte</strong>
+                    <p>Inscrivez-vous ci-contre en 30 secondes.</p>
+                  </div>
+                </li>
+                <li class="sidebar-step">
+                  <span class="sidebar-step__num">2</span>
+                  <div>
+                    <strong>Montrez votre carte</strong>
+                    <p>À chaque achat, montrez votre carte à Alexis.</p>
+                  </div>
+                </li>
+                <li class="sidebar-step">
+                  <span class="sidebar-step__num">3</span>
+                  <div>
+                    <strong>Cumulez les tampons</strong>
+                    <p>1 achat = 1 tampon. Peu importe le montant.</p>
+                  </div>
+                </li>
+                <li class="sidebar-step">
+                  <span class="sidebar-step__num sidebar-step__num--gold">🎁</span>
+                  <div>
+                    <strong>Réclamez votre cadeau</strong>
+                    <p>10 tampons = 1 viennoiserie entièrement offerte au choix.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="sidebar-card sidebar-card--navy">
+              <h2 class="sidebar-card__title">Ce que vous pouvez gagner</h2>
+              <ul class="reward-list" role="list">
+                <li class="reward-item">🥐 Croissant pur beurre</li>
+                <li class="reward-item">🍫 Pain cacao-pralinée</li>
+                <li class="reward-item">🎂 Yogo signature</li>
+                <li class="reward-item">🥧 Chausson aux pommes</li>
+                <li class="reward-item">🍮 Flan lait-œuf</li>
+              </ul>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/logo.svg" alt="Chez Alexis" class="footer__logo" width="72" height="72" />
+          <p class="footer__tagline">Boulangerie Artisanale<br>Boulogne-Billancourt</p>
+          <a href="https://www.instagram.com/boulangeriechezalexis/" target="_blank" rel="noopener noreferrer" class="footer__ig">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            @boulangeriechezalexis
+          </a>
+        </div>
+        <nav class="footer__nav" aria-label="Liens du pied de page">
+          <h3 class="footer__nav-title">La Boulangerie</h3>
+          <ul role="list">
+            <li><a href="index.html#maison">La Maison</a></li>
+            <li><a href="index.html#creations">Nos Créations</a></li>
+            <li><a href="commander.html">Commander</a></li>
+            <li><a href="fidelite.html">Carte Fidélité</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <h3 class="footer__nav-title">Informations</h3>
+          <address>
+            <p>48 bis Av. Victor Hugo<br>92100 Boulogne-Billancourt</p>
+            <p><time datetime="Mo-Sa 07:00-20:00">Lun – Sam : 7h00 – 20h00</time></p>
+          </address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Chez Alexis — Maison Paviot. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <!-- 📌 REPLACE: remplacer WHATSAPP_NUMBER par le numéro complet ex: 33612345678 -->
+  <a
+    href="https://wa.me/WHATSAPP_NUMBER?text=Bonjour%20Chez%20Alexis%20!"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Nous contacter sur WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+  <script>
+    const CARD_KEY = 'chezAlexisLoyalty';
+    const TOTAL_STAMPS = 10;
+
+    const registerSection = document.getElementById('loyalty-register');
+    const cardWrap = document.getElementById('loyalty-card-wrap');
+    const cardOwnerName = document.getElementById('card-owner-name');
+    const cardIdDisplay = document.getElementById('card-id-display');
+    const cardCountEl = document.getElementById('card-count');
+    const stampsContainer = document.getElementById('card-stamps');
+    const loyaltyReward = document.getElementById('loyalty-reward');
+    const resetBtn = document.getElementById('reset-card-btn');
+
+    function generateCardId() {
+      return 'CA-' + String(Math.floor(1000 + Math.random() * 9000));
+    }
+
+    function renderStamps(count) {
+      stampsContainer.innerHTML = '';
+      for (let i = 0; i < TOTAL_STAMPS; i++) {
+        const stamp = document.createElement('div');
+        stamp.className = 'loyalty-stamp' + (i < count ? ' loyalty-stamp--filled' : '');
+        stamp.setAttribute('role', 'listitem');
+        stamp.setAttribute('aria-label', i < count ? 'Tampon validé' : 'Tampon à obtenir');
+        if (i < count) {
+          stamp.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
+        }
+        stampsContainer.appendChild(stamp);
+      }
+    }
+
+    function loadCard() {
+      const data = JSON.parse(localStorage.getItem(CARD_KEY) || 'null');
+      if (!data) return;
+
+      registerSection.hidden = true;
+      cardWrap.hidden = false;
+
+      cardOwnerName.textContent = data.name;
+      cardIdDisplay.textContent = data.cardId;
+      cardCountEl.textContent = data.stamps;
+      renderStamps(data.stamps);
+
+      if (data.stamps >= TOTAL_STAMPS) {
+        loyaltyReward.hidden = false;
+        document.getElementById('loyalty-card').classList.add('loyalty-card--complete');
+      }
+    }
+
+    // Form submit
+    const form = document.getElementById('loyalty-form');
+    if (form) {
+      // Pre-fill card ID
+      const newId = generateCardId();
+      document.getElementById('loy-card-id-input').value = newId;
+
+      form.addEventListener('submit', (e) => {
+        const name = document.getElementById('loy-name').value.trim();
+        const email = document.getElementById('loy-email').value.trim();
+        if (!name || !email) return;
+
+        const cardData = {
+          name,
+          email,
+          cardId: newId,
+          stamps: 0,
+          createdAt: new Date().toISOString()
+        };
+        localStorage.setItem(CARD_KEY, JSON.stringify(cardData));
+        // Let Formspree handle the submission, then show card
+        // We show card optimistically after a short delay
+        setTimeout(loadCard, 300);
+      });
+    }
+
+    // Reset
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (confirm('Réinitialiser votre carte ? Tous vos tampons seront perdus.')) {
+          localStorage.removeItem(CARD_KEY);
+          location.reload();
+        }
+      });
+    }
+
+    // Load on page open
+    loadCard();
+  </script>
+</body>
+</html>

@@ -967,3 +967,694 @@ address { font-style: normal; }
   .stat { border-right: none; border-bottom: 1px solid var(--border-navy); }
   .stat:last-child { border-bottom: none; }
 }
+
+/* ============================================
+   NAV ACTIVE LINK
+   ============================================ */
+.nav__link--active {
+  color: var(--navy) !important;
+}
+.nav__link--active::after {
+  width: 100% !important;
+}
+
+/* ============================================
+   PAGE HERO (commander, fidelite)
+   ============================================ */
+.page-hero {
+  background: var(--white);
+  padding: 130px 0 64px;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero__content {
+  max-width: 640px;
+}
+.page-hero__title {
+  font-family: var(--serif);
+  font-size: clamp(34px, 4.5vw, 58px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--navy-dark);
+  margin-bottom: 16px;
+}
+.page-hero__sub {
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--text-muted);
+  max-width: 500px;
+}
+
+/* ============================================
+   ORDER PAGE
+   ============================================ */
+.order-section {
+  padding: 72px 0 96px;
+  background: var(--cream);
+}
+.order-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Form wrapper */
+.order-form-wrap {
+  background: var(--white);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.order-form {
+  padding: 40px;
+}
+
+/* Form sections */
+.form-section {
+  border: none;
+  padding: 0;
+  margin-bottom: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+}
+.form-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.form-section__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 24px;
+}
+.form-section__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 50%;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Product rows */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.product-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--border);
+  background: var(--cream);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.product-row:hover,
+.product-row--checked {
+  border-color: var(--navy);
+  background: rgba(27,48,112,0.04);
+}
+.product-row--featured {
+  border-color: var(--gold);
+  background: rgba(200,146,42,0.04);
+}
+.product-row__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  cursor: pointer;
+}
+.product-row__check {
+  width: 18px; height: 18px;
+  accent-color: var(--navy);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.product-row__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.product-row__info strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.product-row__info span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.badge-new {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--gold);
+  color: var(--white);
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-family: var(--sans);
+}
+.product-row__qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.qty-btn {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-navy);
+  background: var(--white);
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  line-height: 1;
+}
+.qty-btn:hover {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+.qty-input {
+  width: 42px;
+  text-align: center;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--white);
+}
+.qty-input::-webkit-inner-spin-button,
+.qty-input::-webkit-outer-spin-button { opacity: 1; }
+
+/* Form inputs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.form-group:last-child { margin-bottom: 0; }
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy-dark);
+  letter-spacing: 0.02em;
+}
+.form-label span { color: var(--gold); }
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: 15px;
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(27,48,112,0.1);
+}
+.form-input::placeholder { color: var(--text-muted); opacity: 0.7; }
+.form-select { cursor: pointer; }
+.form-textarea { resize: vertical; min-height: 88px; }
+.form-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.form-row--2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Loyalty field in order form */
+.form-loyalty {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(200,146,42,0.06);
+  border: 1.5px solid rgba(200,146,42,0.25);
+  border-radius: var(--r-lg);
+  padding: 18px 20px;
+  margin: 28px 0;
+}
+.form-loyalty__icon { font-size: 26px; flex-shrink: 0; }
+.form-loyalty > div { flex: 1; }
+.form-loyalty strong { font-size: 14px; color: var(--navy); display: block; margin-bottom: 3px; }
+.form-loyalty p { font-size: 12px; color: var(--text-muted); }
+.form-loyalty__input { width: 130px; flex-shrink: 0; }
+
+/* Submit area */
+.form-submit { text-align: center; padding-top: 8px; }
+.btn--lg { padding: 16px 40px; font-size: 16px; }
+.form-submit__note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.form-success {
+  text-align: center;
+  padding: 32px;
+  background: rgba(27,48,112,0.04);
+  border-radius: var(--r-lg);
+  margin-top: 24px;
+}
+.form-success__icon { font-size: 40px; display: block; margin-bottom: 12px; }
+.form-success h3 { font-family: var(--serif); font-size: 22px; color: var(--navy); margin-bottom: 8px; }
+.form-success p { color: var(--text-muted); }
+
+/* Sidebar cards */
+.order-sidebar,
+.loyalty-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 88px;
+}
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+}
+.sidebar-card--navy {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+.sidebar-card--navy .sidebar-card__title { color: var(--gold-light); }
+.sidebar-card--navy .sidebar-step p,
+.sidebar-card--navy .sidebar-hours,
+.sidebar-card--navy .sidebar-address { color: rgba(255,255,255,0.75); }
+.sidebar-card--navy .sidebar-step strong { color: var(--white); }
+.sidebar-card--light {
+  background: rgba(200,146,42,0.06);
+  border-color: rgba(200,146,42,0.25);
+  text-align: center;
+}
+.sidebar-loyalty-icon { font-size: 32px; display: block; margin-bottom: 10px; }
+.sidebar-card__title {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 18px;
+}
+.sidebar-steps { display: flex; flex-direction: column; gap: 18px; }
+.sidebar-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.sidebar-step__num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.sidebar-card--navy .sidebar-step__num { background: rgba(255,255,255,0.2); }
+.sidebar-step__num--gold {
+  background: none;
+  font-size: 20px;
+  width: 28px; height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-step strong { font-size: 14px; color: var(--navy-dark); display: block; margin-bottom: 3px; }
+.sidebar-step p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+.sidebar-hours { font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
+.sidebar-hours strong { color: var(--white); }
+.sidebar-address { font-size: 14px; line-height: 1.6; }
+
+/* ============================================
+   LOYALTY CARD PAGE
+   ============================================ */
+.loyalty-section {
+  padding: 72px 0 96px;
+  background: var(--cream);
+}
+.loyalty-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: start;
+}
+.loyalty-main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Register form */
+.loyalty-register {
+  background: var(--white);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  padding: 40px;
+}
+.loyalty-register__title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 8px;
+}
+.loyalty-register__sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+.loyalty-form { display: flex; flex-direction: column; gap: 0; }
+
+/* The loyalty card itself */
+.loyalty-card-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.loyalty-card {
+  background: var(--navy);
+  border-radius: var(--r-xl);
+  padding: 36px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.loyalty-card::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+.loyalty-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+.loyalty-card--complete {
+  background: linear-gradient(135deg, var(--gold) 0%, #B8741A 100%);
+}
+.loyalty-card__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+.loyalty-card__logo {
+  width: 52px; height: 52px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+.loyalty-card__brand {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+.loyalty-card__sub {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.loyalty-card__owner {
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+.loyalty-card__owner-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  display: block;
+  margin-bottom: 4px;
+}
+.loyalty-card__owner-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--white);
+}
+.loyalty-card__stamps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+.loyalty-stamp {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.loyalty-stamp--filled {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+.loyalty-stamp--filled svg {
+  width: 55%;
+  height: 55%;
+  color: var(--navy-dark);
+}
+.loyalty-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.loyalty-card__progress {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+.loyalty-card__id {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  font-family: var(--serif);
+}
+
+/* Reward banner */
+.loyalty-reward {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--gold);
+  border-radius: var(--r-lg);
+  padding: 20px 24px;
+  color: var(--white);
+}
+.loyalty-reward__icon { font-size: 28px; flex-shrink: 0; }
+.loyalty-reward strong { display: block; font-size: 16px; margin-bottom: 4px; }
+.loyalty-reward p { font-size: 14px; opacity: 0.9; line-height: 1.5; }
+
+/* Card actions */
+.loyalty-card-hint {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  background: rgba(27,48,112,0.04);
+  border-radius: var(--r-md);
+  padding: 14px 18px;
+  border-left: 3px solid var(--navy);
+}
+.loyalty-card-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+/* Reward list */
+.reward-list { display: flex; flex-direction: column; gap: 10px; }
+.reward-item {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.reward-item:last-child { border-bottom: none; }
+
+/* ============================================
+   INSTAGRAM SECTION
+   ============================================ */
+.instagram-section { background: var(--cream-alt); }
+.instagram-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.instagram-header .section-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.instagram-post {
+  aspect-ratio: 1;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  position: relative;
+  display: block;
+  background: var(--border);
+}
+.instagram-post__img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+/* Placeholder gradient tiles until real images are added */
+.instagram-post__img--1 { background: linear-gradient(135deg, #1B3070 0%, #2D4A9E 100%); }
+.instagram-post__img--2 { background: linear-gradient(135deg, #C8922A 0%, #E8B84B 100%); }
+.instagram-post__img--3 { background: linear-gradient(135deg, #2D4A9E 0%, #4A6CC0 100%); }
+.instagram-post__img--4 { background: linear-gradient(135deg, #0F1E4A 0%, #1B3070 100%); }
+.instagram-post__img--5 { background: linear-gradient(135deg, #E8B84B 0%, #C8922A 100%); }
+.instagram-post__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(27,48,112,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.instagram-post:hover .instagram-post__overlay { opacity: 1; }
+.instagram-post:hover .instagram-post__img { transform: scale(1.05); }
+
+/* CTA tile */
+.instagram-post--cta {
+  background: var(--navy);
+}
+.instagram-post__cta-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--white);
+  text-align: center;
+  padding: 16px;
+  transition: var(--transition);
+}
+.instagram-post--cta:hover .instagram-post__cta-inner {
+  background: rgba(255,255,255,0.08);
+}
+.instagram-post__cta-inner strong { font-size: 13px; font-weight: 600; line-height: 1.3; }
+.instagram-post__cta-inner span { font-size: 11px; opacity: 0.7; }
+
+/* ============================================
+   WHATSAPP BUTTON
+   ============================================ */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 300;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.whatsapp-btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.5);
+}
+
+/* ============================================
+   RESPONSIVE — NEW PAGES
+   ============================================ */
+@media (max-width: 1024px) {
+  .order-layout,
+  .loyalty-layout { grid-template-columns: 1fr; }
+  .order-sidebar,
+  .loyalty-sidebar { position: static; flex-direction: row; flex-wrap: wrap; }
+  .sidebar-card { flex: 1; min-width: 240px; }
+  .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+  .instagram-post--cta { display: none; }
+}
+
+@media (max-width: 768px) {
+  .order-form { padding: 24px; }
+  .loyalty-register { padding: 24px; }
+  .form-row--2col { grid-template-columns: 1fr; }
+  .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+  .loyalty-card__stamps { grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .whatsapp-btn { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+}
+
+@media (max-width: 480px) {
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+  .loyalty-card-btns { flex-direction: column; }
+  .loyalty-card-btns .btn { justify-content: center; }
+}

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commander — Chez Alexis | Boulangerie Artisanale Boulogne-Billancourt</title>
+  <meta name="description" content="Réservez vos pains, viennoiseries et pâtisseries Chez Alexis à Boulogne-Billancourt. Commandez la veille, récupérez le matin — ne manquez plus rien." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.chezalexis-boulangerie.fr/commander.html" />
+  <meta property="og:title" content="Commander en ligne — Chez Alexis" />
+  <meta property="og:description" content="Réservez vos produits la veille. Ne manquez plus le pain cacao-pralinée ou les Yogos signature." />
+  <meta property="og:url" content="https://www.chezalexis-boulangerie.fr/commander.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header role="banner">
+    <nav class="nav scrolled" id="nav" aria-label="Navigation principale">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="Chez Alexis — accueil">
+          <img src="assets/logo.svg" alt="Logo Chez Alexis" class="nav__logo-img" width="48" height="48" />
+          <span class="nav__logo-text">
+            <span class="nav__logo-name">Chez Alexis</span>
+            <span class="nav__logo-sub">Boulangerie Artisanale</span>
+          </span>
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html#maison">La Maison</a></li>
+          <li><a href="index.html#creations">Nos Créations</a></li>
+          <li><a href="commander.html" class="nav__link--active">Commander</a></li>
+          <li><a href="fidelite.html">Carte Fidélité</a></li>
+          <li><a href="index.html#visiter">Nous Trouver</a></li>
+        </ul>
+        <a href="commander.html" class="nav__cta">Commander</a>
+        <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
+        <ul role="list">
+          <li><a href="index.html#maison">La Maison</a></li>
+          <li><a href="index.html#creations">Nos Créations</a></li>
+          <li><a href="commander.html">Commander</a></li>
+          <li><a href="fidelite.html">Carte Fidélité</a></li>
+          <li><a href="index.html#visiter">Nous Trouver</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero__content">
+          <span class="label">Réservation</span>
+          <h1 class="page-hero__title">Commandez la veille,<br>récupérez le matin</h1>
+          <p class="page-hero__sub">Nous sommes souvent en rupture avant 10h. Réservez vos produits à l'avance et soyez sûr de ne rien manquer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER FORM -->
+    <section class="order-section">
+      <div class="container">
+        <div class="order-layout">
+
+          <!-- FORM -->
+          <div class="order-form-wrap">
+
+            <!-- 📌 REPLACE: remplacer YOUR_FORMSPREE_ID par l'ID obtenu sur formspree.io -->
+            <form
+              class="order-form"
+              id="order-form"
+              action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+              method="POST"
+              novalidate
+            >
+              <!-- Hidden fields -->
+              <input type="hidden" name="_subject" value="Nouvelle commande — Chez Alexis" />
+              <input type="hidden" name="_next" value="https://www.chezalexis-boulangerie.fr/merci.html" />
+
+              <!-- STEP 1 — Products -->
+              <fieldset class="form-section">
+                <legend class="form-section__title">
+                  <span class="form-section__num">1</span>
+                  Choisissez vos produits
+                </legend>
+
+                <div class="product-list">
+
+                  <div class="product-row">
+                    <label class="product-row__label">
+                      <input type="checkbox" name="produit_baguette" value="Baguette tradition" class="product-row__check" />
+                      <span class="product-row__info">
+                        <strong>Baguette Tradition</strong>
+                        <span>Farine brute, levain naturel</span>
+                      </span>
+                    </label>
+                    <div class="product-row__qty">
+                      <button type="button" class="qty-btn qty-btn--minus" aria-label="Diminuer">−</button>
+                      <input type="number" name="qte_baguette" value="1" min="1" max="20" class="qty-input" aria-label="Quantité baguette" />
+                      <button type="button" class="qty-btn qty-btn--plus" aria-label="Augmenter">+</button>
+                    </div>
+                  </div>
+
+                  <div class="product-row">
+                    <label class="product-row__label">
+                      <input type="checkbox" name="produit_cacao" value="Pain cacao-pralinée" class="product-row__check" />
+                      <span class="product-row__info">
+                        <strong>Pain Cacao-Pralinée</strong>
+                        <span>Notre signature · Best-seller</span>
+                      </span>
+                    </label>
+                    <div class="product-row__qty">
+                      <button type="button" class="qty-btn qty-btn--minus" aria-label="Diminuer">−</button>
+                      <input type="number" name="qte_cacao" value="1" min="1" max="10" class="qty-input" />
+                      <button type="button" class="qty-btn qty-btn--plus" aria-label="Augmenter">+</button>
+                    </div>
+                  </div>
+
+                  <div class="product-row">
+                    <label class="product-row__label">
+                      <input type="checkbox" name="produit_croissant" value="Croissant" class="product-row__check" />
+                      <span class="product-row__info">
+                        <strong>Croissant</strong>
+                        <span>Pur beurre, feuilleté à la main</span>
+                      </span>
+                    </label>
+                    <div class="product-row__qty">
+                      <button type="button" class="qty-btn qty-btn--minus" aria-label="Diminuer">−</button>
+                      <input type="number" name="qte_croissant" value="1" min="1" max="30" class="qty-input" />
+                      <button type="button" class="qty-btn qty-btn--plus" aria-label="Augmenter">+</button>
+                    </div>
+                  </div>
+
+                  <div class="product-row">
+                    <label class="product-row__label">
+                      <input type="checkbox" name="produit_chausson" value="Chausson aux pommes" class="product-row__check" />
+                      <span class="product-row__info">
+                        <strong>Chausson aux Pommes</strong>
+                        <span>Pommes fraîches, pâte feuilletée</span>
+                      </span>
+                    </label>
+                    <div class="product-row__qty">
+                      <button type="button" class="qty-btn qty-btn--minus" aria-label="Diminuer">−</button>
+                      <input type="number" name="qte_chausson" value="1" min="1" max="20" class="qty-input" />
+                      <button type="button" class="qty-btn qty-btn--plus" aria-label="Augmenter">+</button>
+                    </div>
+                  </div>
+
+                  <div class="product-row product-row--featured">
+                    <label class="product-row__label">
+                      <input type="checkbox" name="produit_yogo" value="Yogo" class="product-row__check" />
+                      <span class="product-row__info">
+                        <strong>Yogo <span class="badge-new">Signature</span></strong>
+                        <span>Chou garni · Pralinée, citron ou framboise</span>
+                      </span>
+                    </label>
+                    <div class="product-row__qty">
+                      <button type="button" class="qty-btn qty-btn--minus" aria-label="Diminuer">−</button>
+                      <input type="number" name="qte_yogo" value="1" min="1" max="10" class="qty-input" />
+                      <button type="button" class="qty-btn qty-btn--plus" aria-label="Augmenter">+</button>
+                    </div>
+                  </div>
+
+                  <div class="product-row">
+                    <label class="product-row__label">
+                      <input type="checkbox" name="produit_flan" value="Flan" class="product-row__check" />
+                      <span class="product-row__info">
+                        <strong>Flan Lait-Œuf</strong>
+                        <span>Recette traditionnelle, crémeux</span>
+                      </span>
+                    </label>
+                    <div class="product-row__qty">
+                      <button type="button" class="qty-btn qty-btn--minus" aria-label="Diminuer">−</button>
+                      <input type="number" name="qte_flan" value="1" min="1" max="10" class="qty-input" />
+                      <button type="button" class="qty-btn qty-btn--plus" aria-label="Augmenter">+</button>
+                    </div>
+                  </div>
+
+                  <div class="product-row">
+                    <label class="product-row__label">
+                      <input type="checkbox" name="produit_levain" value="Pain au levain" class="product-row__check" />
+                      <span class="product-row__info">
+                        <strong>Pain au Levain</strong>
+                        <span>Tradition, céréales ou classique</span>
+                      </span>
+                    </label>
+                    <div class="product-row__qty">
+                      <button type="button" class="qty-btn qty-btn--minus" aria-label="Diminuer">−</button>
+                      <input type="number" name="qte_levain" value="1" min="1" max="10" class="qty-input" />
+                      <button type="button" class="qty-btn qty-btn--plus" aria-label="Augmenter">+</button>
+                    </div>
+                  </div>
+
+                </div>
+              </fieldset>
+
+              <!-- STEP 2 — Pickup -->
+              <fieldset class="form-section">
+                <legend class="form-section__title">
+                  <span class="form-section__num">2</span>
+                  Choisissez votre créneau
+                </legend>
+                <div class="form-row form-row--2col">
+                  <div class="form-group">
+                    <label for="pickup-date" class="form-label">Date de retrait <span aria-hidden="true">*</span></label>
+                    <input type="date" id="pickup-date" name="date_retrait" class="form-input" required aria-required="true" />
+                    <span class="form-hint">Commande à passer la veille avant 20h</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="pickup-time" class="form-label">Heure de retrait <span aria-hidden="true">*</span></label>
+                    <select id="pickup-time" name="heure_retrait" class="form-input form-select" required aria-required="true">
+                      <option value="" disabled selected>Choisir un créneau</option>
+                      <option value="7h00">7h00</option>
+                      <option value="7h30">7h30</option>
+                      <option value="8h00">8h00</option>
+                      <option value="8h30">8h30</option>
+                      <option value="9h00">9h00</option>
+                      <option value="9h30">9h30</option>
+                      <option value="10h00">10h00</option>
+                      <option value="10h30">10h30</option>
+                      <option value="11h00">11h00</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 3 — Contact -->
+              <fieldset class="form-section">
+                <legend class="form-section__title">
+                  <span class="form-section__num">3</span>
+                  Vos coordonnées
+                </legend>
+                <div class="form-row form-row--2col">
+                  <div class="form-group">
+                    <label for="name" class="form-label">Prénom &amp; Nom <span aria-hidden="true">*</span></label>
+                    <input type="text" id="name" name="nom" class="form-input" placeholder="Marie Dupont" required aria-required="true" autocomplete="name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="phone" class="form-label">Téléphone <span aria-hidden="true">*</span></label>
+                    <input type="tel" id="phone" name="telephone" class="form-input" placeholder="06 12 34 56 78" required aria-required="true" autocomplete="tel" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="marie@email.com" autocomplete="email" />
+                  <span class="form-hint">Pour recevoir votre confirmation de commande</span>
+                </div>
+                <div class="form-group">
+                  <label for="notes" class="form-label">Remarques ou demandes spéciales</label>
+                  <textarea id="notes" name="notes" class="form-input form-textarea" placeholder="Ex : sans gluten, allergie aux fruits à coque, découpe en tranches…" rows="3"></textarea>
+                </div>
+              </fieldset>
+
+              <!-- LOYALTY CARD -->
+              <div class="form-loyalty">
+                <span class="form-loyalty__icon" aria-hidden="true">🎁</span>
+                <div>
+                  <strong>Vous avez une Carte Fidélité ?</strong>
+                  <p>Renseignez votre numéro de carte pour valider un tampon sur cette commande.</p>
+                </div>
+                <input type="text" name="carte_fidelite" class="form-input form-loyalty__input" placeholder="CA-XXXX" pattern="CA-[0-9]{4}" aria-label="Numéro de carte fidélité" />
+              </div>
+
+              <!-- SUBMIT -->
+              <div class="form-submit">
+                <button type="submit" class="btn btn--primary btn--lg" id="submit-btn">
+                  Envoyer ma commande
+                </button>
+                <p class="form-submit__note">Vous serez contacté par téléphone pour confirmation. Commandes acceptées jusqu'à 20h la veille.</p>
+              </div>
+
+              <!-- SUCCESS MESSAGE (hidden by default) -->
+              <div class="form-success" id="form-success" aria-live="polite" hidden>
+                <span class="form-success__icon" aria-hidden="true">✅</span>
+                <h3>Commande envoyée !</h3>
+                <p>Nous vous contactons très vite pour confirmer. À demain matin !</p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="order-sidebar" aria-label="Informations pratiques">
+            <div class="sidebar-card">
+              <h2 class="sidebar-card__title">Comment ça marche ?</h2>
+              <ol class="sidebar-steps">
+                <li class="sidebar-step">
+                  <span class="sidebar-step__num">1</span>
+                  <div>
+                    <strong>Commandez la veille</strong>
+                    <p>Remplissez le formulaire avant 20h pour le lendemain matin.</p>
+                  </div>
+                </li>
+                <li class="sidebar-step">
+                  <span class="sidebar-step__num">2</span>
+                  <div>
+                    <strong>On vous confirme</strong>
+                    <p>Alexis vous rappelle pour valider votre commande.</p>
+                  </div>
+                </li>
+                <li class="sidebar-step">
+                  <span class="sidebar-step__num">3</span>
+                  <div>
+                    <strong>Venez récupérer</strong>
+                    <p>Votre commande est prête à l'heure choisie au 48 bis Av. Victor Hugo.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="sidebar-card sidebar-card--navy">
+              <h2 class="sidebar-card__title">Nos horaires</h2>
+              <p class="sidebar-hours">
+                <strong>Lundi — Samedi</strong><br>
+                <time datetime="Mo-Sa 07:00-20:00">7h00 – 20h00</time>
+              </p>
+              <p class="sidebar-address">
+                📍 48 bis Avenue Victor Hugo<br>92100 Boulogne-Billancourt
+              </p>
+            </div>
+
+            <div class="sidebar-card sidebar-card--light">
+              <span class="sidebar-loyalty-icon" aria-hidden="true">🎁</span>
+              <h2 class="sidebar-card__title">Carte Fidélité</h2>
+              <p>10 achats = 1 viennoiserie offerte. Créez votre carte et cumulez à chaque visite.</p>
+              <a href="fidelite.html" class="btn btn--outline btn--sm">Obtenir ma carte</a>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/logo.svg" alt="Chez Alexis" class="footer__logo" width="72" height="72" />
+          <p class="footer__tagline">Boulangerie Artisanale<br>Boulogne-Billancourt</p>
+          <a href="https://www.instagram.com/boulangeriechezalexis/" target="_blank" rel="noopener noreferrer" class="footer__ig">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            @boulangeriechezalexis
+          </a>
+        </div>
+        <nav class="footer__nav" aria-label="Liens du pied de page">
+          <h3 class="footer__nav-title">La Boulangerie</h3>
+          <ul role="list">
+            <li><a href="index.html#maison">La Maison</a></li>
+            <li><a href="index.html#creations">Nos Créations</a></li>
+            <li><a href="commander.html">Commander</a></li>
+            <li><a href="fidelite.html">Carte Fidélité</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <h3 class="footer__nav-title">Informations</h3>
+          <address>
+            <p>48 bis Av. Victor Hugo<br>92100 Boulogne-Billancourt</p>
+            <p><time datetime="Mo-Sa 07:00-20:00">Lun – Sam : 7h00 – 20h00</time></p>
+          </address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Chez Alexis — Maison Paviot. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <!-- 📌 REPLACE: remplacer WHATSAPP_NUMBER par le numéro complet ex: 33612345678 -->
+  <a
+    href="https://wa.me/WHATSAPP_NUMBER?text=Bonjour%20Chez%20Alexis%2C%20je%20souhaite%20passer%20une%20commande."
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Nous contacter sur WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+  <script>
+    // Set minimum date to tomorrow
+    const dateInput = document.getElementById('pickup-date');
+    if (dateInput) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      dateInput.min = tomorrow.toISOString().split('T')[0];
+      dateInput.value = tomorrow.toISOString().split('T')[0];
+    }
+
+    // Qty buttons
+    document.querySelectorAll('.product-row').forEach(row => {
+      const minus = row.querySelector('.qty-btn--minus');
+      const plus = row.querySelector('.qty-btn--plus');
+      const input = row.querySelector('.qty-input');
+      const checkbox = row.querySelector('.product-row__check');
+
+      if (!minus || !plus || !input) return;
+
+      minus.addEventListener('click', () => {
+        const val = parseInt(input.value) || 1;
+        if (val > 1) input.value = val - 1;
+      });
+      plus.addEventListener('click', () => {
+        const val = parseInt(input.value) || 1;
+        input.value = val + 1;
+        if (checkbox) checkbox.checked = true;
+      });
+      if (checkbox) {
+        checkbox.addEventListener('change', () => {
+          row.classList.toggle('product-row--checked', checkbox.checked);
+        });
+      }
+    });
+
+    // Form submit feedback
+    const form = document.getElementById('order-form');
+    const successMsg = document.getElementById('form-success');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        // Validate at least one product checked
+        const anyChecked = [...form.querySelectorAll('.product-row__check')].some(c => c.checked);
+        if (!anyChecked) {
+          e.preventDefault();
+          alert('Veuillez sélectionner au moins un produit.');
+          return;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
