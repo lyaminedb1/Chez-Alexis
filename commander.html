@@ -73,12 +73,9 @@
           <!-- FORM -->
           <div class="order-form-wrap">
 
-            <!-- 📌 REPLACE: remplacer YOUR_FORMSPREE_ID par l'ID obtenu sur formspree.io -->
             <form
               class="order-form"
               id="order-form"
-              action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-              method="POST"
               novalidate
             >
               <!-- Hidden fields -->
@@ -426,17 +423,63 @@
       }
     });
 
-    // Form submit feedback
+    // ── Form submit → real API ──
     const form = document.getElementById('order-form');
+    const submitBtn = document.getElementById('submit-btn');
     const successMsg = document.getElementById('form-success');
+
     if (form) {
       form.addEventListener('submit', async (e) => {
-        // Validate at least one product checked
-        const anyChecked = [...form.querySelectorAll('.product-row__check')].some(c => c.checked);
-        if (!anyChecked) {
-          e.preventDefault();
+        e.preventDefault();
+
+        // Validate: at least one product checked
+        const checkedProducts = [...form.querySelectorAll('.product-row__check')]
+          .filter(c => c.checked)
+          .map(c => ({
+            nom: c.value,
+            quantite: parseInt(c.closest('.product-row').querySelector('.qty-input').value) || 1
+          }));
+
+        if (!checkedProducts.length) {
           alert('Veuillez sélectionner au moins un produit.');
           return;
+        }
+
+        const data = {
+          nom:           form.nom.value.trim(),
+          telephone:     form.telephone.value.trim(),
+          email:         form.email.value.trim() || null,
+          date_retrait:  form.date_retrait.value,
+          heure_retrait: form.heure_retrait.value,
+          produits:      checkedProducts,
+          notes:         form.notes.value.trim() || null,
+          carte_fidelite: form.carte_fidelite.value.trim() || null,
+          paid:          false
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours…';
+
+        try {
+          const res = await fetch('/api/create-order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+
+          if (res.ok) {
+            form.style.display = 'none';
+            successMsg.hidden = false;
+          } else {
+            const err = await res.json();
+            alert('Erreur : ' + (err.error || 'Veuillez réessayer.'));
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Envoyer ma commande';
+          }
+        } catch {
+          alert('Erreur réseau. Veuillez réessayer ou nous appeler directement.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Envoyer ma commande';
         }
       });
     }

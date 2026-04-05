@@ -75,8 +75,7 @@
               <h2 class="loyalty-register__title">Créez votre carte</h2>
               <p class="loyalty-register__sub">Renseignez vos informations et obtenez votre numéro de carte instantanément.</p>
 
-              <!-- 📌 REPLACE: remplacer YOUR_FORMSPREE_ID par l'ID obtenu sur formspree.io -->
-              <form class="loyalty-form" id="loyalty-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+              <form class="loyalty-form" id="loyalty-form" novalidate>
                 <input type="hidden" name="_subject" value="Nouvelle Carte Fidélité — Chez Alexis" />
 
                 <div class="form-group">
@@ -260,21 +259,17 @@
 
   <script src="script.js"></script>
   <script>
-    const CARD_KEY = 'chezAlexisLoyalty';
+    const CARD_KEY = 'chezAlexisCardId'; // On stocke juste l'ID, les données viennent de l'API
     const TOTAL_STAMPS = 10;
 
     const registerSection = document.getElementById('loyalty-register');
-    const cardWrap = document.getElementById('loyalty-card-wrap');
-    const cardOwnerName = document.getElementById('card-owner-name');
-    const cardIdDisplay = document.getElementById('card-id-display');
-    const cardCountEl = document.getElementById('card-count');
+    const cardWrap       = document.getElementById('loyalty-card-wrap');
+    const cardOwnerName  = document.getElementById('card-owner-name');
+    const cardIdDisplay  = document.getElementById('card-id-display');
+    const cardCountEl    = document.getElementById('card-count');
     const stampsContainer = document.getElementById('card-stamps');
-    const loyaltyReward = document.getElementById('loyalty-reward');
-    const resetBtn = document.getElementById('reset-card-btn');
-
-    function generateCardId() {
-      return 'CA-' + String(Math.floor(1000 + Math.random() * 9000));
-    }
+    const loyaltyReward  = document.getElementById('loyalty-reward');
+    const resetBtn       = document.getElementById('reset-card-btn');
 
     function renderStamps(count) {
       stampsContainer.innerHTML = '';
@@ -290,61 +285,85 @@
       }
     }
 
-    function loadCard() {
-      const data = JSON.parse(localStorage.getItem(CARD_KEY) || 'null');
-      if (!data) return;
-
+    function showCard(data) {
       registerSection.hidden = true;
       cardWrap.hidden = false;
-
-      cardOwnerName.textContent = data.name;
-      cardIdDisplay.textContent = data.cardId;
-      cardCountEl.textContent = data.stamps;
-      renderStamps(data.stamps);
-
-      if (data.stamps >= TOTAL_STAMPS) {
+      cardOwnerName.textContent = data.nom;
+      cardIdDisplay.textContent = data.card_id;
+      cardCountEl.textContent = data.tampons;
+      renderStamps(data.tampons);
+      if (data.tampons >= TOTAL_STAMPS) {
         loyaltyReward.hidden = false;
         document.getElementById('loyalty-card').classList.add('loyalty-card--complete');
       }
     }
 
-    // Form submit
+    // Load card from API if we have a stored card ID
+    async function loadCard() {
+      const cardId = localStorage.getItem(CARD_KEY);
+      if (!cardId) return;
+      try {
+        const res = await fetch(`/api/loyalty?id=${cardId}`);
+        if (res.ok) {
+          const data = await res.json();
+          showCard(data);
+        } else {
+          // Card not found in DB — clear local storage
+          localStorage.removeItem(CARD_KEY);
+        }
+      } catch {
+        // Offline fallback — show cached data if any
+      }
+    }
+
+    // Form submit → real API
     const form = document.getElementById('loyalty-form');
     if (form) {
-      // Pre-fill card ID
-      const newId = generateCardId();
-      document.getElementById('loy-card-id-input').value = newId;
+      const submitBtn = form.querySelector('button[type="submit"]');
 
-      form.addEventListener('submit', (e) => {
-        const name = document.getElementById('loy-name').value.trim();
-        const email = document.getElementById('loy-email').value.trim();
-        if (!name || !email) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const nom       = document.getElementById('loy-name').value.trim();
+        const email     = document.getElementById('loy-email').value.trim();
+        const telephone = document.getElementById('loy-phone').value.trim();
+        if (!nom || !email) return;
 
-        const cardData = {
-          name,
-          email,
-          cardId: newId,
-          stamps: 0,
-          createdAt: new Date().toISOString()
-        };
-        localStorage.setItem(CARD_KEY, JSON.stringify(cardData));
-        // Let Formspree handle the submission, then show card
-        // We show card optimistically after a short delay
-        setTimeout(loadCard, 300);
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Création en cours…';
+
+        try {
+          const res = await fetch('/api/loyalty', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nom, email, telephone })
+          });
+          const data = await res.json();
+          if (res.ok || res.status === 200) {
+            localStorage.setItem(CARD_KEY, data.card_id);
+            showCard(data);
+          } else {
+            alert('Erreur : ' + (data.error || 'Veuillez réessayer.'));
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Obtenir ma carte fidélité gratuite';
+          }
+        } catch {
+          alert('Erreur réseau. Veuillez réessayer.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Obtenir ma carte fidélité gratuite';
+        }
       });
     }
 
     // Reset
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
-        if (confirm('Réinitialiser votre carte ? Tous vos tampons seront perdus.')) {
+        if (confirm('Dissocier cette carte de cet appareil ?')) {
           localStorage.removeItem(CARD_KEY);
           location.reload();
         }
       });
     }
 
-    // Load on page open
     loadCard();
   </script>
 </body>

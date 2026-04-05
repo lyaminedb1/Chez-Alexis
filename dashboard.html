@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Chez Alexis</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <!-- LOGIN SCREEN -->
+  <div class="dash-login" id="dash-login">
+    <div class="dash-login__card">
+      <img src="assets/logo.svg" alt="Chez Alexis" width="80" height="80" />
+      <h1 class="dash-login__title">Dashboard Admin</h1>
+      <p class="dash-login__sub">Accès réservé à Alexis</p>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="pwd" class="form-label">Mot de passe</label>
+          <input type="password" id="pwd" class="form-input" placeholder="••••••••" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn--primary" style="width:100%">Accéder au dashboard</button>
+        <p class="dash-login__error" id="login-error" hidden>Mot de passe incorrect</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAIN DASHBOARD -->
+  <div class="dash-app" id="dash-app" hidden>
+
+    <!-- SIDEBAR -->
+    <aside class="dash-sidebar">
+      <div class="dash-sidebar__brand">
+        <img src="assets/logo.svg" alt="Chez Alexis" width="40" height="40" />
+        <span>Chez Alexis</span>
+      </div>
+      <nav class="dash-nav">
+        <button class="dash-nav__item is-active" data-tab="commandes">
+          📋 Commandes
+        </button>
+        <button class="dash-nav__item" data-tab="fidelite">
+          🎁 Fidélité
+        </button>
+        <button class="dash-nav__item" data-tab="stats">
+          📊 Statistiques
+        </button>
+      </nav>
+      <div class="dash-sidebar__footer">
+        <a href="index.html" class="dash-back">← Voir le site</a>
+        <button class="dash-logout" id="logout-btn">Déconnexion</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dash-main">
+
+      <!-- ── COMMANDES ── -->
+      <section class="dash-tab is-active" id="tab-commandes">
+        <div class="dash-header">
+          <h2 class="dash-title">Commandes du jour</h2>
+          <div class="dash-header__actions">
+            <input type="date" id="filter-date" class="form-input dash-date-filter" aria-label="Filtrer par date" />
+            <button class="btn btn--outline btn--sm" id="refresh-orders">↻ Rafraîchir</button>
+          </div>
+        </div>
+
+        <!-- Stats rapides -->
+        <div class="dash-stats-row" id="orders-stats">
+          <div class="dash-stat-card">
+            <span class="dash-stat-card__num" id="stat-total">—</span>
+            <span class="dash-stat-card__label">Commandes</span>
+          </div>
+          <div class="dash-stat-card">
+            <span class="dash-stat-card__num" id="stat-pending">—</span>
+            <span class="dash-stat-card__label">En attente</span>
+          </div>
+          <div class="dash-stat-card">
+            <span class="dash-stat-card__num" id="stat-confirmed">—</span>
+            <span class="dash-stat-card__label">Confirmées</span>
+          </div>
+          <div class="dash-stat-card">
+            <span class="dash-stat-card__num" id="stat-paid">—</span>
+            <span class="dash-stat-card__label">Payées en ligne</span>
+          </div>
+        </div>
+
+        <!-- Orders list -->
+        <div class="dash-orders-list" id="orders-list">
+          <div class="dash-empty">Chargement des commandes…</div>
+        </div>
+      </section>
+
+      <!-- ── FIDÉLITÉ ── -->
+      <section class="dash-tab" id="tab-fidelite">
+        <div class="dash-header">
+          <h2 class="dash-title">Carte Fidélité</h2>
+        </div>
+
+        <!-- Scanner une carte -->
+        <div class="dash-loyalty-scanner">
+          <h3 class="dash-section-title">Valider un tampon</h3>
+          <p class="dash-section-sub">Entrez le numéro de carte du client pour ajouter un tampon.</p>
+          <div class="dash-scanner-row">
+            <input type="text" id="scan-card-id" class="form-input" placeholder="CA-XXXX" pattern="CA-[0-9]{4}" style="max-width:200px" />
+            <button class="btn btn--primary" id="stamp-btn">Ajouter un tampon ✓</button>
+            <button class="btn btn--outline" id="reset-stamp-btn">Réinitialiser (reward utilisé)</button>
+          </div>
+          <div class="dash-scanner-result" id="scanner-result" hidden></div>
+        </div>
+
+        <!-- Search a card -->
+        <div class="dash-loyalty-search">
+          <h3 class="dash-section-title">Rechercher une carte</h3>
+          <div class="dash-scanner-row">
+            <input type="text" id="search-card" class="form-input" placeholder="Numéro CA-XXXX ou email" style="max-width:280px" />
+            <button class="btn btn--outline" id="search-card-btn">Rechercher</button>
+          </div>
+          <div class="dash-card-result" id="card-result" hidden></div>
+        </div>
+      </section>
+
+      <!-- ── STATISTIQUES ── -->
+      <section class="dash-tab" id="tab-stats">
+        <div class="dash-header">
+          <h2 class="dash-title">Statistiques</h2>
+        </div>
+        <div class="dash-stats-grid" id="stats-grid">
+          <div class="dash-stat-big">
+            <span class="dash-stat-big__num" id="stat-total-orders">—</span>
+            <span class="dash-stat-big__label">Commandes totales</span>
+          </div>
+          <div class="dash-stat-big">
+            <span class="dash-stat-big__num" id="stat-total-cards">—</span>
+            <span class="dash-stat-big__label">Cartes fidélité actives</span>
+          </div>
+          <div class="dash-stat-big">
+            <span class="dash-stat-big__num" id="stat-revenue">—</span>
+            <span class="dash-stat-big__label">Commandes en ligne ce mois</span>
+          </div>
+        </div>
+        <div class="dash-products-ranking" id="products-ranking">
+          <h3 class="dash-section-title">Produits les plus commandés</h3>
+          <div id="ranking-list" class="dash-empty">Chargement…</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // ── Auth (mot de passe simple côté client — le vrai check est dans l'API) ──
+    const ADMIN_KEY = localStorage.getItem('ca_admin_key');
+    const loginScreen = document.getElementById('dash-login');
+    const dashApp = document.getElementById('dash-app');
+
+    function showDash() {
+      loginScreen.hidden = true;
+      dashApp.hidden = false;
+      loadOrders();
+      loadStats();
+    }
+
+    if (ADMIN_KEY) showDash();
+
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const pwd = document.getElementById('pwd').value;
+      // Verify against API
+      const res = await fetch('/api/loyalty', {
+        method: 'GET',
+        headers: { 'x-admin-key': pwd, 'Content-Type': 'application/json' }
+      }).catch(() => null);
+      // Simple check: if we get 200 or 404 (not 401), password is good
+      if (res && res.status !== 401) {
+        localStorage.setItem('ca_admin_key', pwd);
+        showDash();
+      } else {
+        document.getElementById('login-error').hidden = false;
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('ca_admin_key');
+      location.reload();
+    });
+
+    // ── Tabs ──
+    document.querySelectorAll('.dash-nav__item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.dash-nav__item').forEach(b => b.classList.remove('is-active'));
+        document.querySelectorAll('.dash-tab').forEach(t => t.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('is-active');
+        if (btn.dataset.tab === 'stats') loadStats();
+      });
+    });
+
+    // ── Load orders ──
+    const adminKey = () => localStorage.getItem('ca_admin_key');
+    const filterDate = document.getElementById('filter-date');
+
+    // Default: today
+    filterDate.value = new Date().toISOString().split('T')[0];
+
+    async function loadOrders() {
+      const date = filterDate.value;
+      const list = document.getElementById('orders-list');
+      list.innerHTML = '<div class="dash-empty">Chargement…</div>';
+
+      const res = await fetch(`/api/create-order?date=${date}`, {
+        headers: { 'x-admin-key': adminKey() }
+      });
+      if (!res.ok) { list.innerHTML = '<div class="dash-empty">Erreur chargement</div>'; return; }
+      const orders = await res.json();
+
+      // Stats
+      document.getElementById('stat-total').textContent = orders.length;
+      document.getElementById('stat-pending').textContent = orders.filter(o => o.statut === 'pending').length;
+      document.getElementById('stat-confirmed').textContent = orders.filter(o => o.statut === 'confirmed').length;
+      document.getElementById('stat-paid').textContent = orders.filter(o => o.paid).length;
+
+      if (!orders.length) {
+        list.innerHTML = '<div class="dash-empty">Aucune commande pour cette date.</div>';
+        return;
+      }
+
+      list.innerHTML = orders.map(o => `
+        <div class="order-card" data-id="${o.id}">
+          <div class="order-card__header">
+            <div>
+              <strong class="order-card__name">${o.nom}</strong>
+              <span class="order-card__time">${o.heure_retrait}</span>
+            </div>
+            <div class="order-card__badges">
+              ${o.paid ? '<span class="badge badge--green">Payé</span>' : '<span class="badge badge--yellow">Caisse</span>'}
+              <span class="badge badge--${statusColor(o.statut)}">${statusLabel(o.statut)}</span>
+            </div>
+          </div>
+          <ul class="order-card__products">
+            ${o.produits.map(p => `<li>${p.quantite}× ${p.nom}</li>`).join('')}
+          </ul>
+          <div class="order-card__footer">
+            <span>📞 ${o.telephone}</span>
+            ${o.notes ? `<span>💬 ${o.notes}</span>` : ''}
+            ${o.carte_fidelite ? `<span>🎁 ${o.carte_fidelite}</span>` : ''}
+          </div>
+          <div class="order-card__actions">
+            <button class="btn btn--outline btn--sm" onclick="updateStatus('${o.id}', 'confirmed')">✓ Confirmer</button>
+            <button class="btn btn--outline btn--sm" onclick="updateStatus('${o.id}', 'ready')">📦 Prêt</button>
+            <button class="btn btn--outline btn--sm" onclick="updateStatus('${o.id}', 'done')">✅ Remis</button>
+            <button class="btn btn--outline btn--sm" onclick="updateStatus('${o.id}', 'cancelled')" style="color:red">✗ Annuler</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function statusLabel(s) {
+      return { pending:'En attente', confirmed:'Confirmée', ready:'Prête', done:'Remise', cancelled:'Annulée' }[s] || s;
+    }
+    function statusColor(s) {
+      return { pending:'yellow', confirmed:'blue', ready:'navy', done:'green', cancelled:'red' }[s] || 'gray';
+    }
+
+    async function updateStatus(id, statut) {
+      await fetch('/api/create-order', {
+        method: 'PATCH',
+        headers: { 'Content-Type':'application/json', 'x-admin-key': adminKey() },
+        body: JSON.stringify({ id, statut })
+      });
+      loadOrders();
+    }
+
+    filterDate.addEventListener('change', loadOrders);
+    document.getElementById('refresh-orders').addEventListener('click', loadOrders);
+
+    // ── Loyalty stamp ──
+    async function loyaltyAction(cardId, action) {
+      const res = await fetch('/api/loyalty', {
+        method: 'PATCH',
+        headers: { 'Content-Type':'application/json', 'x-admin-key': adminKey() },
+        body: JSON.stringify({ card_id: cardId, action })
+      });
+      const data = await res.json();
+      const result = document.getElementById('scanner-result');
+      result.hidden = false;
+      if (data.error) {
+        result.className = 'dash-scanner-result dash-scanner-result--error';
+        result.textContent = '❌ ' + data.error;
+      } else {
+        result.className = 'dash-scanner-result dash-scanner-result--success';
+        result.innerHTML = action === 'reset'
+          ? `✅ Carte ${cardId} réinitialisée — nouveau cycle !`
+          : `✅ Tampon ajouté — ${data.tampons}/10 pour ${data.nom}${data.reward ? ' 🎉 REWARD DÉBLOQUÉ !' : ''}`;
+      }
+    }
+
+    document.getElementById('stamp-btn').addEventListener('click', () => {
+      const id = document.getElementById('scan-card-id').value.trim();
+      if (!id) return;
+      loyaltyAction(id, 'add');
+    });
+    document.getElementById('reset-stamp-btn').addEventListener('click', () => {
+      const id = document.getElementById('scan-card-id').value.trim();
+      if (!id) return;
+      if (confirm(`Réinitialiser la carte ${id} après reward utilisé ?`)) loyaltyAction(id, 'reset');
+    });
+
+    // ── Search card ──
+    document.getElementById('search-card-btn').addEventListener('click', async () => {
+      const query = document.getElementById('search-card').value.trim();
+      if (!query) return;
+      const res = await fetch(`/api/loyalty?id=${encodeURIComponent(query)}`, {
+        headers: { 'x-admin-key': adminKey() }
+      });
+      const data = await res.json();
+      const result = document.getElementById('card-result');
+      result.hidden = false;
+      if (data.error) {
+        result.innerHTML = '<p style="color:red">Carte introuvable</p>';
+      } else {
+        const stamps = Array.from({length:10}, (_,i) =>
+          `<span class="mini-stamp${i < data.tampons ? ' mini-stamp--filled':''}">${i < data.tampons ? '✓':''}</span>`
+        ).join('');
+        result.innerHTML = `
+          <div class="dash-card-info">
+            <p><strong>${data.nom}</strong> — ${data.email}</p>
+            <p>Carte : <code>${data.card_id}</code></p>
+            <div class="mini-stamps">${stamps}</div>
+            <p>${data.tampons}/10 tampons</p>
+          </div>
+        `;
+      }
+    });
+
+    // ── Stats ──
+    async function loadStats() {
+      const res = await fetch('/api/create-order?stats=true', {
+        headers: { 'x-admin-key': adminKey() }
+      }).catch(() => null);
+      if (!res?.ok) return;
+      const data = await res.json();
+      if (data.total_orders !== undefined) document.getElementById('stat-total-orders').textContent = data.total_orders;
+      if (data.total_cards !== undefined) document.getElementById('stat-total-cards').textContent = data.total_cards;
+      if (data.monthly_orders !== undefined) document.getElementById('stat-revenue').textContent = data.monthly_orders;
+
+      if (data.top_products?.length) {
+        document.getElementById('ranking-list').innerHTML = data.top_products
+          .map((p, i) => `<div class="ranking-row"><span class="ranking-num">${i+1}</span><span class="ranking-name">${p.nom}</span><span class="ranking-count">${p.count}×</span></div>`)
+          .join('');
+      }
+    }
+  </script>
+</body>
+</html>
